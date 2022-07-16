@@ -5,20 +5,84 @@ using UnityEngine;
 public class Skeleton : MonoBehaviour, IMonster
 {
     public float health;
+    public Vector3 movePosition;
+    public float moveSpeed = 1;
+    public float weight = 1;
+    public float shockDuration = 1;
 
+    private bool isInShock = false;
     private Rigidbody2D rigidBody;
+    private GameObject player;
+    private Animator animator;
+    private bool isDead = false;
+
+
     public void Start()
     {
+        player = GameObject.Find("Player");
         rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
+
+    public void FixedUpdate()
+    {
+        if (!isInShock && !isDead)
+        {
+            movePosition = player.transform.position;
+            Vector3 motion = (movePosition - transform.position).normalized * moveSpeed * Time.deltaTime;
+            rigidBody.MovePosition(transform.position + motion);
+            
+
+            if(motion.magnitude >= 0)
+            {
+                animator.SetBool("Walk",true);
+            }
+
+            if (Util.AngleDir(new Vector2(transform.position.x, transform.position.y), new Vector2(movePosition.x, movePosition.y)) <= 0) {
+                //left
+                transform.localScale = new Vector3(1, 1, 1);
+            } else
+            {
+                //right
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+        } else
+        {
+          animator.SetBool("Walk", false);
+        }
+
+    }
+
     public void ApplyDamage(float dmg)
     {
+        if(!isDead)
+        {
+            this.health -= dmg;
+            if (this.health <= 0)
+            {
+                StartCoroutine(Routines.DoLater(3, () =>
+                {
+                    Destroy(this.gameObject);
+                }));
+                animator.SetBool("Death",true);
+                isDead = true;
+            }
+        }
     }
 
     public void ApplyKnockback(Vector3 knockback)
     {
-        Debug.Log("Apply force!");
-        rigidBody.AddForce(knockback, ForceMode2D.Impulse);
+        if(!isDead)
+        {
+            isInShock = true;
+            animator.SetTrigger("Hurt");
+            rigidBody.AddForce(knockback, ForceMode2D.Impulse);
+            StartCoroutine(Routines.DoLater(shockDuration, () =>
+            {
+                isInShock = false;
+            }));
+        }
     }
+
 
 }
