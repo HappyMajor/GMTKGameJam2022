@@ -8,10 +8,12 @@ public class ShadowMonster : MonoBehaviour, IMonster
     public Vector3 movePosition;
     public float moveSpeed = 1;
     public float weight = 1;
+    public float shockDuration = 1;
 
+    private bool isInShock = false;
     private Rigidbody2D rigidBody;
-
     private GameObject player;
+
 
     public void Start()
     {
@@ -21,9 +23,13 @@ public class ShadowMonster : MonoBehaviour, IMonster
 
     public void FixedUpdate()
     {
-        movePosition = player.transform.position;
-        Vector3 motion = (movePosition - transform.position).normalized * moveSpeed * Time.deltaTime;
-        rigidBody.MovePosition(transform.position + motion);
+        if(!isInShock)
+        {
+            movePosition = player.transform.position;
+            Vector3 motion = (movePosition - transform.position).normalized * moveSpeed * Time.deltaTime;
+            rigidBody.MovePosition(transform.position + motion);
+        }
+
     }
 
     public void ApplyDamage(float dmg)
@@ -37,7 +43,12 @@ public class ShadowMonster : MonoBehaviour, IMonster
 
     public void ApplyKnockback(Vector3 knockback)
     {
-        rigidBody.AddForce(knockback * 10, ForceMode2D.Impulse);
+        isInShock = true;
+        rigidBody.AddForce(knockback, ForceMode2D.Impulse);
+        StartCoroutine(Routines.DoLater(shockDuration, () =>
+        {
+            isInShock = false;
+        }));
     }
 
 

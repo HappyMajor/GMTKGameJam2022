@@ -17,10 +17,8 @@ public class AutoAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision ENTER!");
         if (collision.gameObject.tag == "Monster")
         {
-            Debug.Log("Collision with Monster!");
             IMonster monster = collision.gameObject.GetComponent<IMonster>();
             monster.ApplyDamage(Damage);
             monster.ApplyKnockback(Knockback);
