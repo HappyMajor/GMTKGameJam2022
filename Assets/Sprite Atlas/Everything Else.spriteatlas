@@ -49,6 +49,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: d61528454458835458cce2e4822494ad, type: 3}
     - {fileID: 102900000, guid: b8c16b4e21787c14188e677e37dfd10d, type: 3}
     - {fileID: 102900000, guid: 9c292e32e2a16c74b8898bf388af5d5e, type: 3}
+    - {fileID: 2800000, guid: befecc9f8b0aff1419b9b4624bd36ac6, type: 3}
+    - {fileID: 2800000, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -557,6 +559,12 @@ SpriteAtlas:
   - {fileID: 1640409911530616572, guid: 0c633a7e188e2484e9c7c751edc084ae, type: 3}
   - {fileID: 6469868488227890111, guid: 0c633a7e188e2484e9c7c751edc084ae, type: 3}
   - {fileID: -6659220382827945446, guid: 0c633a7e188e2484e9c7c751edc084ae, type: 3}
+  - {fileID: 3907519424729572514, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: 1151216110476234006, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: -5990918361367357168, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: -2920913464302379187, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: -1997312751396575243, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: 21300000, guid: befecc9f8b0aff1419b9b4624bd36ac6, type: 3}
   - {fileID: 4901022682840745452, guid: 59ed21ff4f58dab45ae2f77744e02fce, type: 3}
   - {fileID: 4550778819936622928, guid: 59ed21ff4f58dab45ae2f77744e02fce, type: 3}
   - {fileID: -470878406005159121, guid: 59ed21ff4f58dab45ae2f77744e02fce, type: 3}
@@ -1069,6 +1077,12 @@ SpriteAtlas:
   - skeleton_attack_1
   - skeleton_attack_2
   - skeleton_attack_3
+  - teleport_128_1
+  - teleport_128_0
+  - teleport_128_3
+  - teleport_128_2
+  - teleport_128_4
+  - skeleton_dead
   - skeleton-variation1-walk_6
   - skeleton-variation1-walk_7
   - skeleton-variation1-walk_4
@@ -1078,5 +1092,5 @@ SpriteAtlas:
   - skeleton-variation1-walk_0
   - skeleton-variation1-walk_1
   m_RenderDataMap: {}
-  m_Tag: Other
+  m_Tag: Everything Else
   m_IsVariant: 0
