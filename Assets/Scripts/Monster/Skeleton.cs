@@ -15,6 +15,8 @@ public class Skeleton : MonoBehaviour, IMonster
     private GameObject player;
     private Animator animator;
     private bool isDead = false;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip deathSound;
 
 
     public void Start()
@@ -22,6 +24,7 @@ public class Skeleton : MonoBehaviour, IMonster
         player = GameObject.Find("Player");
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void FixedUpdate()
@@ -66,6 +69,9 @@ public class Skeleton : MonoBehaviour, IMonster
                 }));
                 animator.SetBool("Death",true);
                 isDead = true;
+
+                // Play sound
+                audioSource.PlayOneShot(deathSound);
             }
         }
     }
