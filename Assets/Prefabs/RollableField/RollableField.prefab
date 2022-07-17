@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 0.31132078, g: 0.18522607, b: 0.0748932, a: 1}
+  m_Color: {r: 0.123353496, g: 0.15558052, b: 0.41509432, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250b773a6c7a24647b6fe12ccfeb237c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dicePrefab: {fileID: 7852507527649644254, guid: 1de5f47ee658f1440a411f9daaed8f57, type: 3}
   skeletonPrefab: {fileID: 9107806396975814539, guid: 6b8408d7b8e0d8347944c0425018b600, type: 3}
+  darkMainColor: {r: 0.12175151, g: 0.15751125, b: 0.4528302, a: 0}
+  lightMainColor: {r: 0.10840159, g: 0.2211963, b: 0.7924528, a: 0}
 --- !u!61 &6656363100984702604
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -21,6 +21,28 @@ public class MapManager : MonoBehaviour
             {
                 GameObject rollableField = Instantiate(rollableFieldPrefab);
                 rollableField.transform.position = new Vector3(x * 10, y * 10, 0);
+                RollableField field = rollableField.GetComponent<RollableField>();
+
+                if(x % 2 == 0)
+                {
+                    if(y % 2 == 0)
+                    {
+                        field.AssignDarkColor();
+                    } else
+                    {
+                        field.AssignLightColor();
+                    }
+                } else
+                {
+                    if (y % 2 != 0)
+                    {
+                        field.AssignDarkColor();
+                    }
+                    else
+                    {
+                        field.AssignLightColor();
+                    }
+                }
             }
         }
     }

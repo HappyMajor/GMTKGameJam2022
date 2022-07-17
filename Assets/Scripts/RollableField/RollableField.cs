@@ -10,6 +10,9 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
     private Tilemap middleTilemap;
     private Tilemap highTilemap;
     private SpriteRenderer spriteRenderer;
+    private GameObject player;
+
+    public GameObject dicePrefab;
 
     private int diceRollResult = 0;
 
@@ -19,12 +22,56 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
 
     public FieldType CurrentFieldType {get; set; }
 
+    public Color darkMainColor;
+    public Color lightMainColor;
+
+    public void AssignDarkColor()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        this.spriteRenderer.color = darkMainColor;
+    }
+
+    public void AssignLightColor()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        this.spriteRenderer.color = lightMainColor;
+    }
+
+    public struct RollableFieldProps
+    {
+        public RollableFieldProps(
+          float speed,
+          float range,
+          float duration,
+          float knockback,
+          int damage,
+          float cooldown
+          )
+        {
+            Duration = duration;
+            Knockback = knockback;
+            Range = range;
+            Speed = speed;
+            Damage = damage;
+            Cooldown = cooldown;
+        }
+
+        public float Duration { get; }
+        public float Knockback { get; }
+        public float Range { get; }
+        public float Speed { get; }
+        public float Damage { get; }
+        //defined as attacks per second
+        public float Cooldown { get; }
+    }
+
     private void Start()
     {
         fieldDatabase = GameObject.Find("FieldDatabase").GetComponent<FieldDatabase>();
         baseTilemap = GameObject.Find("Tilemap_Base").GetComponent<Tilemap>();
         middleTilemap = GameObject.Find("Tilemap_Middle").GetComponent<Tilemap>();
         highTilemap = GameObject.Find("Tilemap_High").GetComponent<Tilemap>();
+        player = GameObject.Find("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomFieldType();
     }
@@ -37,7 +84,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         if(randomNumber < 20)
         {
             //20%
-            spriteRenderer.color = Color.yellow;
+            //spriteRenderer.color = Color.yellow;
             fieldType = FieldType.HIGH_RISK_HIGH_REWARD;
         } else if (randomNumber >= 20 && randomNumber < 30)
         {
@@ -48,7 +95,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         {
             //10%
             fieldType = FieldType.HIGH_REWARD;
-            spriteRenderer.color = Color.green;
+           // spriteRenderer.color = Color.green;
         } else if(randomNumber >= 40 && randomNumber < 100) 
         {
             //60%
@@ -99,8 +146,9 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         return transform.position + new Vector3(x, y, 0);
     }
 
-    public void Roll()
+    public void Roll(int diceResult)
     {
+        diceRollResult = diceResult;
         FieldData fieldData = fieldDatabase.fieldDataList[0];
         Vector3Int topLeftCornerCell = baseTilemap.WorldToCell(transform.position);
 
@@ -128,16 +176,26 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
             }
         }
         GetComponent<SpriteRenderer>().sprite = null;
-
-        diceRollResult = UnityEngine.Random.Range(1, 6);
         isRolled = true;
         SpawnEnemies();
     }
 
+    public void ThrowDice()
+    {
+        isRolled = true;
+        Dice dice = Instantiate(dicePrefab, player.transform.position, Quaternion.Euler(new Vector3(0,0,0))).GetComponent<Dice>();
+        dice.ThrowAtTarget(transform.position, (int result) =>
+        {
+            Roll(result);
+        });
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(!isRolled) 
-        Roll();
+        if(!isRolled)
+        {
+            ThrowDice();
+        }
     }
 
     public enum FieldType
