@@ -541,6 +541,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &435996282
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435996280}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1397,7 @@ PrefabInstance:
       objectReference: {fileID: 2136152522309262775, guid: bc0dfee84cd9a7d43bc57080effabb1a, type: 3}
     - target: {fileID: 649013866543907562, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8779034415638566644, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
       propertyPath: m_Name
@@ -1740,6 +1761,8 @@ MonoBehaviour:
   mapWidth: 10
   mapHeight: 10
   rollableFieldPrefab: {fileID: 6298742523731822932, guid: 3f7da52accc93bb41aca9fb416e0d9c0, type: 3}
+  exitPrefab: {fileID: 7762535195627545308, guid: 52d706ea3f3feef4383b3bbae412c5bf, type: 3}
+  invisibleWallPrefab: {fileID: 734193902386831437, guid: 4f38550a42b8dd045ba4d28fdc18beac, type: 3}
 --- !u!1 &1597258857
 GameObject:
   m_ObjectHideFlags: 0

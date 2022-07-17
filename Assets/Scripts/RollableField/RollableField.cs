@@ -196,6 +196,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         GetComponent<SpriteRenderer>().sprite = null;
         isRolled = true;
         SpawnEnemies();
+        GetComponent<Collider2D>().isTrigger = true;
     }
 
     public void ThrowDice()

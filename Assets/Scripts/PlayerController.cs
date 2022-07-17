@@ -69,8 +69,12 @@ public class PlayerController : MonoBehaviour
 
     public void Update()
     {
-        CheckAndDoMovement();
         CheckAndDoAttack();
+    }
+
+    private void FixedUpdate()
+    {
+        CheckAndDoMovement();
     }
 
     private void SetHealth(float value)
@@ -92,7 +96,8 @@ public class PlayerController : MonoBehaviour
         if(CanMove())
         {
             Vector3 motion = new Vector3(horizontal, vertical, 0f) * moveSpeed * Time.deltaTime;
-            transform.position = transform.position + motion;
+            //transform.position = transform.position + motion;
+            GetComponent<Rigidbody2D>().MovePosition(transform.position + motion);
         }
     }
 
@@ -206,10 +211,9 @@ public class PlayerController : MonoBehaviour
                 return AttackLevel.One;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Monster")
+        if (collision.gameObject.tag == "Monster")
         {
             SetHealth(health - 1);
         }
