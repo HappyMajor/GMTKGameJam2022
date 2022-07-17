@@ -169,6 +169,8 @@ public class PlayerController : MonoBehaviour
             case AttackLevel.Two:
                 return AttackLevel.Three;
             case AttackLevel.Three:
+                return AttackLevel.Four;
+            case AttackLevel.Four:
                 return AttackLevel.One;
             default:
                 return AttackLevel.One;
