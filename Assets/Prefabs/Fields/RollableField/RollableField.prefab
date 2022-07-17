@@ -369,6 +369,7 @@ MonoBehaviour:
   highRiskIndicator: {fileID: 5425009608122127449}
   highRewardIndicator: {fileID: 8870628650148869170}
   highRewardHighRiskIndicator: {fileID: 1747281948416810266}
+  pentagram: {fileID: 79837603739420767}
   dicePrefab: {fileID: 7852507527649644254, guid: 1de5f47ee658f1440a411f9daaed8f57, type: 3}
   skeletonPrefab: {fileID: 9107806396975814539, guid: 6b8408d7b8e0d8347944c0425018b600, type: 3}
   darkMainColor: {r: 0, g: 0, b: 0, a: 1}

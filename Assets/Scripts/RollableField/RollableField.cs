@@ -15,6 +15,11 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
     public GameObject highRiskIndicator;
     public GameObject highRewardIndicator;
     public GameObject highRewardHighRiskIndicator;
+    public GameObject pentagram;
+
+    public GameObject healthPotionPrefab;
+    public GameObject speedPotionPrefab;
+    public GameObject powerupPrefab;
 
     public GameObject dicePrefab;
 
@@ -142,9 +147,31 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
        
     }
 
-    public void SpawnUpgrade()
+    public void SpawnUpgrade(int amount)
     {
+        int minCount = 0;
+        int maxCount = 3;
 
+        if (CurrentFieldType == FieldType.NEUTRAL)
+        {
+            minCount = 0;
+            maxCount = diceRollResult * 2;
+        }
+        if (CurrentFieldType == FieldType.HIGH_RISK)
+        {
+            minCount = diceRollResult;
+            maxCount = diceRollResult * 5;
+        }
+        if (CurrentFieldType == FieldType.HIGH_REWARD)
+        {
+            minCount = 0;
+            maxCount = 6 - diceRollResult;
+        }
+        int skeletonCount = UnityEngine.Random.Range(minCount, maxCount);
+        for (int i = 0; i < skeletonCount; i++)
+        {
+            Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0)));
+        }
     }
 
     public Vector3 GetRandomPositionInField()
@@ -196,6 +223,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         GetComponent<SpriteRenderer>().sprite = null;
         isRolled = true;
         SpawnEnemies();
+        pentagram.SetActive(false);
         GetComponent<Collider2D>().isTrigger = true;
     }
 

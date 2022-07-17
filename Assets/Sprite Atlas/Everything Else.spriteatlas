@@ -15,7 +15,7 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 1
+      filterMode: 0
       generateMipMaps: 0
       readable: 0
       crunchedCompression: 0
@@ -1078,5 +1078,5 @@ SpriteAtlas:
   - skeleton-variation1-walk_0
   - skeleton-variation1-walk_1
   m_RenderDataMap: {}
-  m_Tag: Other
+  m_Tag: Everything Else
   m_IsVariant: 0

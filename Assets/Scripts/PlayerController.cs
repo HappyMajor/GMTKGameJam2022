@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
     public float health = 3;
     public float maxHealth = 3;
+    public float gold = 0;
 
     public float moveSpeed;
     public float autoAttackMovementDelay;
@@ -86,6 +87,11 @@ public class PlayerController : MonoBehaviour
         {
             //DEATH
         }
+    }
+
+    public void SetGold(float value)
+    {
+        this.gold = value;
     }
 
     public void CheckAndDoMovement()
@@ -216,6 +222,36 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Monster")
         {
             SetHealth(health - 1);
+        }
+        if(collision.gameObject.tag == "Consumable")
+        {
+            Debug.Log("HIT CONSUMABLE!");
+            if (collision.gameObject.GetComponent<Money>() != null)
+            {
+                Destroy(collision.gameObject);
+                SetGold(gold + 1);
+            }
+            if (collision.gameObject.GetComponent<SpeedPotion>() != null)
+            {
+                Destroy(collision.gameObject);
+                moveSpeed += 1f;
+            }
+            if (collision.gameObject.GetComponent<HealthPotion>() != null)
+            {
+                Destroy(collision.gameObject);
+                if(health + 1 >= maxHealth)
+                {
+                    SetHealth(maxHealth);
+                } else
+                {
+                    SetHealth(health);
+                }
+            }
+            if (collision.gameObject.GetComponent<Powerup>() != null)
+            {
+                Destroy(collision.gameObject);
+                this.attackLevel = getNextWeaponLevel();
+            }
         }
     }
 }

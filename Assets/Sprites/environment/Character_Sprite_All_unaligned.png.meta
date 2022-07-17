@@ -1,0 +1,1002 @@
+fileFormatVersion: 2
+guid: 720e84109f6a1c748a6f9a28920bf112
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2562541130055523284
+    second: Character_Sprite_All_unaligned_0
+  - first:
+      213: 8813174679024688132
+    second: Character_Sprite_All_unaligned_1
+  - first:
+      213: -9132711867166712422
+    second: Character_Sprite_All_unaligned_2
+  - first:
+      213: -636484996338469265
+    second: Character_Sprite_All_unaligned_3
+  - first:
+      213: 5378848398135595724
+    second: Character_Sprite_All_unaligned_4
+  - first:
+      213: 8920918865856260675
+    second: Character_Sprite_All_unaligned_5
+  - first:
+      213: -6656941654745593090
+    second: Character_Sprite_All_unaligned_6
+  - first:
+      213: 8116409590824322906
+    second: Character_Sprite_All_unaligned_7
+  - first:
+      213: -6478021940194979744
+    second: Character_Sprite_All_unaligned_8
+  - first:
+      213: -7828544049113810708
+    second: Character_Sprite_All_unaligned_9
+  - first:
+      213: -293713286272519821
+    second: Character_Sprite_All_unaligned_10
+  - first:
+      213: -6624703903649017914
+    second: Character_Sprite_All_unaligned_11
+  - first:
+      213: -5427882888578018536
+    second: Character_Sprite_All_unaligned_12
+  - first:
+      213: 847999808386029879
+    second: Character_Sprite_All_unaligned_13
+  - first:
+      213: -1263952691511910915
+    second: Character_Sprite_All_unaligned_14
+  - first:
+      213: -9188205899417576363
+    second: Character_Sprite_All_unaligned_15
+  - first:
+      213: -3547963534551297163
+    second: Character_Sprite_All_unaligned_16
+  - first:
+      213: 174282201388457343
+    second: Character_Sprite_All_unaligned_17
+  - first:
+      213: 7810234886513031449
+    second: Character_Sprite_All_unaligned_18
+  - first:
+      213: -7861950133380832481
+    second: Character_Sprite_All_unaligned_19
+  - first:
+      213: -3749865421471220550
+    second: Character_Sprite_All_unaligned_20
+  - first:
+      213: 6786233762927377740
+    second: Character_Sprite_All_unaligned_21
+  - first:
+      213: -315977011034530016
+    second: Character_Sprite_All_unaligned_22
+  - first:
+      213: -5884861234539452863
+    second: Character_Sprite_All_unaligned_23
+  - first:
+      213: 2666229970882909524
+    second: Character_Sprite_All_unaligned_24
+  - first:
+      213: 2503916811969318208
+    second: Character_Sprite_All_unaligned_25
+  - first:
+      213: 4707853726613150968
+    second: Character_Sprite_All_unaligned_26
+  - first:
+      213: -6694416917056290253
+    second: Character_Sprite_All_unaligned_27
+  - first:
+      213: 996950402562324707
+    second: Character_Sprite_All_unaligned_28
+  - first:
+      213: 1039945234989946098
+    second: Character_Sprite_All_unaligned_29
+  - first:
+      213: -1128992631377154609
+    second: Character_Sprite_All_unaligned_30
+  - first:
+      213: -5874189491333623838
+    second: Character_Sprite_All_unaligned_31
+  - first:
+      213: -2196100092283567432
+    second: Character_Sprite_All_unaligned_32
+  - first:
+      213: -1895950425208718049
+    second: Character_Sprite_All_unaligned_33
+  - first:
+      213: 6614382628870000122
+    second: Character_Sprite_All_unaligned_34
+  - first:
+      213: -4542701964267139677
+    second: Character_Sprite_All_unaligned_35
+  - first:
+      213: 7476520368904863147
+    second: Character_Sprite_All_unaligned_36
+  - first:
+      213: -666112678077174092
+    second: Character_Sprite_All_unaligned_37
+  - first:
+      213: 6843888274102048208
+    second: Character_Sprite_All_unaligned_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 284
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2466bc4b66007cd0800000000000000
+      internalID: -2562541130055523284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 283
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40cdbb62dafae4a70800000000000000
+      internalID: 8813174679024688132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 276
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d9889a1f6124180800000000000000
+      internalID: -9132711867166712422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 277
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f663160a440ca27f0800000000000000
+      internalID: -636484996338469265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 276
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc21d87ae1285aa40800000000000000
+      internalID: 5378848398135595724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 275
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a617581787dcb70800000000000000
+      internalID: 8920918865856260675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 217
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa4362c5dacd93a0800000000000000
+      internalID: -6656941654745593090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_7
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 216
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5748a0358743a070800000000000000
+      internalID: 8116409590824322906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_8
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 215
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060dd7f0e517916a0800000000000000
+      internalID: -6478021940194979744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_9
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 213
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8b21c2aac6b5390800000000000000
+      internalID: -7828544049113810708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_10
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 212
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371f9e182558cebf0800000000000000
+      internalID: -293713286272519821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_11
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 209
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf4bd816e25014a0800000000000000
+      internalID: -6624703903649017914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_12
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 211
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 813d2ef55494ca4b0800000000000000
+      internalID: -5427882888578018536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_13
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 207
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739d2743553b4cb00800000000000000
+      internalID: 847999808386029879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 40
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd988949b9857ee0800000000000000
+      internalID: -1263952691511910915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_15
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 151
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c111a6a6fec7080800000000000000
+      internalID: -9188205899417576363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_16
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 149
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573d70796f913cec0800000000000000
+      internalID: -3547963534551297163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_17
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 148
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d9e602dbc2b6200800000000000000
+      internalID: 174282201388457343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_19
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 145
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f132002120eb4e290800000000000000
+      internalID: -7861950133380832481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_21
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 146
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d7c0207ab8d2e50800000000000000
+      internalID: 6786233762927377740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_22
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 145
+        width: 40
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fd814259c6d9bf0800000000000000
+      internalID: -315977011034530016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_23
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 80
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1462fc2f2e5c45ea0800000000000000
+      internalID: -5884861234539452863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_24
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 77
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455d9ff380a500520800000000000000
+      internalID: 2666229970882909524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_25
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 78
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d4f8cf213bfb220800000000000000
+      internalID: 2503916811969318208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_26
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 77
+        width: 35
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc96456508a55140800000000000000
+      internalID: 4707853726613150968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_27
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 73
+        width: 35
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3328e705847a813a0800000000000000
+      internalID: -6694416917056290253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_28
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 75
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8f86beb11e5dd00800000000000000
+      internalID: 996950402562324707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_29
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 76
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f49f6d6ea0ae6e00800000000000000
+      internalID: 1039945234989946098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_30
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 74
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd2bb4fe230550f0800000000000000
+      internalID: -1128992631377154609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_31
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 4
+        width: 40
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef0ab9c7cfaa7ea0800000000000000
+      internalID: -5874189491333623838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_32
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b24c3cf992e581e0800000000000000
+      internalID: -2196100092283567432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_33
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1dfea9222b30b5e0800000000000000
+      internalID: -1895950425208718049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_34
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd8f4ad4f10bcb50800000000000000
+      internalID: 6614382628870000122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_35
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad436bb1a415f0c0800000000000000
+      internalID: -4542701964267139677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_36
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 3
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badfb88c9afe1c760800000000000000
+      internalID: 7476520368904863147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_37
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 2
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be63da6c0e71c6f0800000000000000
+      internalID: -666112678077174092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Sprite_All_unaligned_38
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d55054ff106afe50800000000000000
+      internalID: 6843888274102048208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
