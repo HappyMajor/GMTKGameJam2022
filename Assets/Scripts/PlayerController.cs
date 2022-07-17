@@ -228,7 +228,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("HIT CONSUMABLE!");
             if (collision.gameObject.GetComponent<Money>() != null)
             {
-                Destroy(collision.gameObject);
+                var money = collision.gameObject.GetComponent<Money>();
+                money.PlaySound();
+                StartCoroutine(Routines.DoLater(money.sound.length, () =>
+                {
+                    Destroy(collision.gameObject);
+                }));
                 SetGold(gold + 1);
             }
             if (collision.gameObject.GetComponent<SpeedPotion>() != null)
