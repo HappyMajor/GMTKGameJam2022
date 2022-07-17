@@ -12,6 +12,10 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
     private SpriteRenderer spriteRenderer;
     private GameObject player;
 
+    public GameObject highRiskIndicator;
+    public GameObject highRewardIndicator;
+    public GameObject highRewardHighRiskIndicator;
+
     public GameObject dicePrefab;
 
     private int diceRollResult = 0;
@@ -86,15 +90,19 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
             //20%
             //spriteRenderer.color = Color.yellow;
             fieldType = FieldType.HIGH_RISK_HIGH_REWARD;
+            highRewardHighRiskIndicator.SetActive(true);
+
         } else if (randomNumber >= 20 && randomNumber < 30)
         {
             //10%
             fieldType = FieldType.HIGH_RISK;
+            highRiskIndicator.SetActive(true);
            // spriteRenderer.color = Color.red;
         } else if(randomNumber >= 30 && randomNumber < 40)
         {
             //10%
             fieldType = FieldType.HIGH_REWARD;
+            highRewardIndicator.SetActive(true);
            // spriteRenderer.color = Color.green;
         } else if(randomNumber >= 40 && randomNumber < 100) 
         {
@@ -104,6 +112,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
 
         CurrentFieldType = fieldType;
     }
+
 
     public void SpawnEnemies()
     {

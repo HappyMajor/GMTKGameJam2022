@@ -46,9 +46,11 @@ public class Dice : MonoBehaviour
         animator.speed = 0f;
         animator.enabled = false;
         GameObject skillFx = Instantiate(skillFxPrefab, transform);
-        skillFx.transform.position = transform.position + new Vector3(0,0,-6);
-        Debug.Log("Roll Result!" + result);
+        skillFx.transform.position = transform.position;
         spriteRenderer.sprite = eyesOneToSix[result - 1];
+        //bring it to front
+        transform.position = new Vector3(transform.position.x, transform.position.y, -6);
+
         StartCoroutine(Routines.DoLater(2, () =>
         {
             callback(result);

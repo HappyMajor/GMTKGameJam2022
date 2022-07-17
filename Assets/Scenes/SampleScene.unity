@@ -1770,8 +1770,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldDataList:
-  - {fileID: 11400000, guid: 8e2aece2d82aaf6418203ea294437067, type: 2}
-  - {fileID: 11400000, guid: 62ce1675c74c1584198dca4ff8968260, type: 2}
+  - {fileID: 11400000, guid: 249a715d64b5d9c4db4a8703ffa42396, type: 2}
+  - {fileID: 11400000, guid: 874699f536d54ac4ba4785572ae65ccb, type: 2}
   - {fileID: 11400000, guid: 249a715d64b5d9c4db4a8703ffa42396, type: 2}
   - {fileID: 11400000, guid: 378640a40cbd06f4aa9303b45de4c49f, type: 2}
   - {fileID: 11400000, guid: 7975f4693ae003d45a8728ff84cc438f, type: 2}
@@ -1784,8 +1784,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a6256667d820794185974c2bbe8730e, type: 2}
   - {fileID: 11400000, guid: 874699f536d54ac4ba4785572ae65ccb, type: 2}
   - {fileID: 11400000, guid: befc72a4d03f3fe46b04770b2f6ebbe1, type: 2}
-  - {fileID: 11400000, guid: 8e2aece2d82aaf6418203ea294437067, type: 2}
-  - {fileID: 11400000, guid: 6dc3e87bf7918b14a86a0dbaad1264dd, type: 2}
 --- !u!4 &1597258859
 Transform:
   m_ObjectHideFlags: 0
