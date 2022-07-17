@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dd49cdb53f8cd14e97c3630db30c3ce, type: 3}
-  m_Name: FieldData1
+  m_Name: wall_in_center
   m_EditorClassIdentifier: 
   baseTiles:
   - {fileID: 11400000, guid: 271df0cf8f91c134cadbd8c8f94cb63e, type: 2}
@@ -215,6 +215,40 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   highTiles:
+  - {fileID: 11400000, guid: f02c98db60226d349b84cc35cebeb95b, type: 2}
+  - {fileID: 11400000, guid: f02c98db60226d349b84cc35cebeb95b, type: 2}
+  - {fileID: 11400000, guid: 30963d59620e5da44b51913d63586a68, type: 2}
+  - {fileID: 11400000, guid: 30963d59620e5da44b51913d63586a68, type: 2}
+  - {fileID: 11400000, guid: 30963d59620e5da44b51913d63586a68, type: 2}
+  - {fileID: 11400000, guid: 30963d59620e5da44b51913d63586a68, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: f02c98db60226d349b84cc35cebeb95b, type: 2}
+  - {fileID: 11400000, guid: f02c98db60226d349b84cc35cebeb95b, type: 2}
+  - {fileID: 11400000, guid: f02c98db60226d349b84cc35cebeb95b, type: 2}
+  - {fileID: 11400000, guid: 30963d59620e5da44b51913d63586a68, type: 2}
+  - {fileID: 11400000, guid: 30963d59620e5da44b51913d63586a68, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 30963d59620e5da44b51913d63586a68, type: 2}
+  - {fileID: 11400000, guid: 30963d59620e5da44b51913d63586a68, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 11400000, guid: f96a4b238570a664084c0b934759667b, type: 2}
   - {fileID: 11400000, guid: d24447f6d132d7546a9bd2c11a655a0d, type: 2}
   - {fileID: 0}
@@ -246,40 +280,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 7b0d932961726f64bad23fc4a1ffe8c5, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
