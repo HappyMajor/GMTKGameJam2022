@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  private AudioSource audioSource;
+  [SerializeField] public AudioClip sound;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  void Start()
+  {
+    audioSource = GetComponent<AudioSource>();
+  }
+
+  public void PlaySound()
+  {
+    audioSource.PlayOneShot(sound);
+  }
 }

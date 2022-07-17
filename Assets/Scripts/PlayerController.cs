@@ -236,14 +236,25 @@ public class PlayerController : MonoBehaviour
                 }));
                 SetGold(gold + 1);
             }
-            if (collision.gameObject.GetComponent<SpeedPotion>() != null)
+            else if (collision.gameObject.GetComponent<SpeedPotion>() != null)
             {
-                Destroy(collision.gameObject);
+                var potion = collision.gameObject.GetComponent<SpeedPotion>();
+                potion.PlaySound();
+                StartCoroutine(Routines.DoLater(potion.sound.length, () =>
+                {
+                    Destroy(collision.gameObject);
+                }));
                 moveSpeed += 1f;
             }
-            if (collision.gameObject.GetComponent<HealthPotion>() != null)
+            else if (collision.gameObject.GetComponent<HealthPotion>() != null)
             {
-                Destroy(collision.gameObject);
+                var potion = collision.gameObject.GetComponent<HealthPotion>();
+                potion.PlaySound();
+                StartCoroutine(Routines.DoLater(potion.sound.length, () =>
+                {
+                    Destroy(collision.gameObject);
+                }));
+
                 if(health + 1 >= maxHealth)
                 {
                     SetHealth(maxHealth);
@@ -252,9 +263,15 @@ public class PlayerController : MonoBehaviour
                     SetHealth(health);
                 }
             }
-            if (collision.gameObject.GetComponent<Powerup>() != null)
+            else if (collision.gameObject.GetComponent<Powerup>() != null)
             {
-                Destroy(collision.gameObject);
+                var powerup = collision.gameObject.GetComponent<Powerup>();
+                powerup.PlaySound();
+                StartCoroutine(Routines.DoLater(powerup.sound.length, () =>
+                {
+                    Destroy(collision.gameObject);
+                }));
+
                 this.attackLevel = getNextWeaponLevel();
             }
         }
