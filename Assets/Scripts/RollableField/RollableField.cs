@@ -156,7 +156,9 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         diceRollResult = diceResult;
-        FieldData fieldData = fieldDatabase.fieldDataList[0];
+        int randomField = UnityEngine.Random.Range(0, fieldDatabase.fieldDataList.Count);
+        FieldData fieldData = fieldDatabase.fieldDataList[randomField];
+        
         Vector3Int topLeftCornerCell = baseTilemap.WorldToCell(transform.position);
 
         int counter = 0;

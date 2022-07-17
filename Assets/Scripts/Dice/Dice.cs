@@ -11,6 +11,7 @@ public class Dice : MonoBehaviour
     private Action<int> callback;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    public GameObject skillFxPrefab;
 
     public Sprite[] eyesOneToSix;
 
@@ -27,7 +28,6 @@ public class Dice : MonoBehaviour
             {
                 //We reached the destination close enough
                 this.animator.SetBool("Roll", false);
-
                 transform.position = targetPosition;
                 isRolling = false;
                 RollResult();
@@ -45,11 +45,14 @@ public class Dice : MonoBehaviour
         int result = UnityEngine.Random.Range(1, 7);
         animator.speed = 0f;
         animator.enabled = false;
+        GameObject skillFx = Instantiate(skillFxPrefab, transform);
+        skillFx.transform.position = transform.position;
         Debug.Log("Roll Result!" + result);
         spriteRenderer.sprite = eyesOneToSix[result - 1];
         StartCoroutine(Routines.DoLater(2, () =>
         {
             callback(result);
+            Destroy(skillFx); 
         }));
     }
 
