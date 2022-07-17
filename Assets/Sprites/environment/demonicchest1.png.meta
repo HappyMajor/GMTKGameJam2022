@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -292,6 +293,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      demonicchest1_0: 4121921020729522610
+      demonicchest1_5: 3830325398858930458
+      demonicchest1_4: 2120188296329227833
+      demonicchest1_2: 8071156231405094056
+      demonicchest1_3: 6758088564032691030
+      demonicchest1_1: -7427564987751249229
+      demonicchest1_6: -4984918438749148749
+      demonicchest1_7: -2512960095657914878
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

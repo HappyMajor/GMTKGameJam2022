@@ -40,6 +40,7 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
@@ -49,6 +50,10 @@ SpriteAtlas:
     - {fileID: 2800000, guid: d61528454458835458cce2e4822494ad, type: 3}
     - {fileID: 102900000, guid: b8c16b4e21787c14188e677e37dfd10d, type: 3}
     - {fileID: 102900000, guid: 9c292e32e2a16c74b8898bf388af5d5e, type: 3}
+    - {fileID: 2800000, guid: befecc9f8b0aff1419b9b4624bd36ac6, type: 3}
+    - {fileID: 2800000, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+    - {fileID: 2800000, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+    - {fileID: 2800000, guid: f021b5937f9847e47b3985da2a139707, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -56,6 +61,24 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: bbed6f30e1dad4a98b28102fa3f7bfa1, type: 3}
   - {fileID: 21300000, guid: f19dabb0dbec80c4dba8e04364ce6655, type: 3}
+  - {fileID: -7427564987751249229, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+  - {fileID: 4121921020729522610, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+  - {fileID: 6758088564032691030, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+  - {fileID: 8071156231405094056, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+  - {fileID: 3830325398858930458, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+  - {fileID: 2120188296329227833, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+  - {fileID: -2512960095657914878, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+  - {fileID: -4984918438749148749, guid: 45ca52228278cb9469cb376f320ff709, type: 3}
+  - {fileID: -5533810949261644772, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: 6281173559678341316, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: -407856595642065811, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: 7915915593761736627, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: -6116963357262179218, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: -5275974221471470513, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: 8413302526757980907, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: 2986952904727189007, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: -4897505507605704354, guid: f021b5937f9847e47b3985da2a139707, type: 3}
+  - {fileID: 1251982216193701722, guid: f021b5937f9847e47b3985da2a139707, type: 3}
   - {fileID: -938309037179832286, guid: d61528454458835458cce2e4822494ad, type: 3}
   - {fileID: -199818814999697862, guid: d61528454458835458cce2e4822494ad, type: 3}
   - {fileID: -1496247607254613345, guid: d61528454458835458cce2e4822494ad, type: 3}
@@ -557,6 +580,12 @@ SpriteAtlas:
   - {fileID: 1640409911530616572, guid: 0c633a7e188e2484e9c7c751edc084ae, type: 3}
   - {fileID: 6469868488227890111, guid: 0c633a7e188e2484e9c7c751edc084ae, type: 3}
   - {fileID: -6659220382827945446, guid: 0c633a7e188e2484e9c7c751edc084ae, type: 3}
+  - {fileID: 3907519424729572514, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: 1151216110476234006, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: -5990918361367357168, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: -2920913464302379187, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: -1997312751396575243, guid: 1dbc997f8be95eb4eb92e5d026d80128, type: 3}
+  - {fileID: 21300000, guid: befecc9f8b0aff1419b9b4624bd36ac6, type: 3}
   - {fileID: 4901022682840745452, guid: 59ed21ff4f58dab45ae2f77744e02fce, type: 3}
   - {fileID: 4550778819936622928, guid: 59ed21ff4f58dab45ae2f77744e02fce, type: 3}
   - {fileID: -470878406005159121, guid: 59ed21ff4f58dab45ae2f77744e02fce, type: 3}
@@ -568,6 +597,24 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - fireball
   - Heart
+  - demonicchest1_1
+  - demonicchest1_0
+  - demonicchest1_3
+  - demonicchest1_2
+  - demonicchest1_5
+  - demonicchest1_4
+  - demonicchest1_7
+  - demonicchest1_6
+  - gold_4
+  - gold_5
+  - gold_6
+  - gold_7
+  - gold_1
+  - gold_2
+  - gold_3
+  - gold_8
+  - gold_9
+  - gold_10
   - pentagramm_1
   - pentagramm_2
   - pentagramm_3
@@ -1069,6 +1116,12 @@ SpriteAtlas:
   - skeleton_attack_1
   - skeleton_attack_2
   - skeleton_attack_3
+  - teleport_128_1
+  - teleport_128_0
+  - teleport_128_3
+  - teleport_128_2
+  - teleport_128_4
+  - skeleton_dead
   - skeleton-variation1-walk_6
   - skeleton-variation1-walk_7
   - skeleton-variation1-walk_4
