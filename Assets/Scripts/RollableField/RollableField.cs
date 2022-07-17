@@ -20,6 +20,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
     public GameObject healthPotionPrefab;
     public GameObject speedPotionPrefab;
     public GameObject powerupPrefab;
+    public GameObject goldPrefab;
 
     public GameObject dicePrefab;
 
@@ -136,8 +137,13 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         }
         if (CurrentFieldType == FieldType.HIGH_REWARD)
         {
-            minCount = 0;
-            maxCount = 6 - diceRollResult;
+            SpawnRandomUpgrades(diceRollResult);
+            SpawnMoney(diceRollResult * 4);
+        } else if(CurrentFieldType == FieldType.HIGH_RISK_HIGH_REWARD)
+        {
+            SpawnRandomUpgrades(diceRollResult);
+            minCount = diceRollResult;
+            maxCount = diceRollResult * 5;
         }
         int skeletonCount = UnityEngine.Random.Range(minCount, maxCount);
         for(int i = 0; i < skeletonCount; i++)
@@ -147,30 +153,34 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
        
     }
 
-    public void SpawnUpgrade(int amount)
+    public void SpawnMoney(int amount)
     {
-        int minCount = 0;
-        int maxCount = 3;
+        for (int i = 0; i < amount; i++)
+        {
+            Instantiate(goldPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0)));
+        }
+    }
 
-        if (CurrentFieldType == FieldType.NEUTRAL)
+    public void SpawnRandomUpgrades(int amount)
+    {
+        for (int i = 0; i < amount; i++)
         {
-            minCount = 0;
-            maxCount = diceRollResult * 2;
-        }
-        if (CurrentFieldType == FieldType.HIGH_RISK)
-        {
-            minCount = diceRollResult;
-            maxCount = diceRollResult * 5;
-        }
-        if (CurrentFieldType == FieldType.HIGH_REWARD)
-        {
-            minCount = 0;
-            maxCount = 6 - diceRollResult;
-        }
-        int skeletonCount = UnityEngine.Random.Range(minCount, maxCount);
-        for (int i = 0; i < skeletonCount; i++)
-        {
-            Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0)));
+            GameObject potionToSpawn = null;
+            int randomPotion = UnityEngine.Random.Range(0, 3);
+
+            if(randomPotion == 0)
+            {
+                potionToSpawn = powerupPrefab;
+            }
+            if (randomPotion == 1)
+            {
+                potionToSpawn = speedPotionPrefab;
+            } else
+            {
+                potionToSpawn = healthPotionPrefab;
+            }
+
+            Instantiate(potionToSpawn, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0)));
         }
     }
 

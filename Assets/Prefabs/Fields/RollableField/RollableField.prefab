@@ -370,6 +370,10 @@ MonoBehaviour:
   highRewardIndicator: {fileID: 8870628650148869170}
   highRewardHighRiskIndicator: {fileID: 1747281948416810266}
   pentagram: {fileID: 79837603739420767}
+  healthPotionPrefab: {fileID: 1826989312695279547, guid: 9c60a796749af68479925c4462d99e61, type: 3}
+  speedPotionPrefab: {fileID: 1826989312695279547, guid: f62f3619ffa0b6c42862e6ecf14f15f7, type: 3}
+  powerupPrefab: {fileID: 1826989312695279547, guid: 66d3e27b11610014f8730c850077247b, type: 3}
+  goldPrefab: {fileID: 1826989312695279547, guid: 8010fd20bb0f28049a18b77934607760, type: 3}
   dicePrefab: {fileID: 7852507527649644254, guid: 1de5f47ee658f1440a411f9daaed8f57, type: 3}
   skeletonPrefab: {fileID: 9107806396975814539, guid: 6b8408d7b8e0d8347944c0425018b600, type: 3}
   darkMainColor: {r: 0, g: 0, b: 0, a: 1}
