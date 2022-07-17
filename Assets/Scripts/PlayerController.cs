@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     public float autoAttackMovementDelay;
     public Slider healthBarSlider;
     public GameObject autoAttackPrefab;
+    public GameObject replayMenu;
 
     private bool isMovementBlockedByAttack = false;
     private Vector3 playerBounds;
@@ -84,7 +85,8 @@ public class PlayerController : MonoBehaviour
         healthBarSlider.value = value / maxHealth;
         if (value <= 0)
         {
-            //DEATH
+            replayMenu.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -221,6 +223,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Monster")
         {
             SetHealth(health - 1);
+            
         }
        
     }
