@@ -90,7 +90,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         {
             //10%
             fieldType = FieldType.HIGH_RISK;
-            spriteRenderer.color = Color.red;
+           // spriteRenderer.color = Color.red;
         } else if(randomNumber >= 30 && randomNumber < 40)
         {
             //10%
@@ -148,6 +148,13 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
 
     public void Roll(int diceResult)
     {
+        fieldDatabase = GameObject.Find("FieldDatabase").GetComponent<FieldDatabase>();
+        baseTilemap = GameObject.Find("Tilemap_Base").GetComponent<Tilemap>();
+        middleTilemap = GameObject.Find("Tilemap_Middle").GetComponent<Tilemap>();
+        highTilemap = GameObject.Find("Tilemap_High").GetComponent<Tilemap>();
+        player = GameObject.Find("Player");
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         diceRollResult = diceResult;
         FieldData fieldData = fieldDatabase.fieldDataList[0];
         Vector3Int topLeftCornerCell = baseTilemap.WorldToCell(transform.position);

@@ -15,34 +15,49 @@ public class MapManager : MonoBehaviour
 
     public void GenerateMap()
     {
+
         for(int x = 0; x < mapWidth; x++)
         {
             for(int y = 0; y < mapHeight; y++)
             {
-                GameObject rollableField = Instantiate(rollableFieldPrefab);
-                rollableField.transform.position = new Vector3(x * 10, y * 10, 0);
-                RollableField field = rollableField.GetComponent<RollableField>();
-
-                if(x % 2 == 0)
+                if(x == 0 && y == 0)
                 {
-                    if(y % 2 == 0)
-                    {
-                        field.AssignDarkColor();
-                    } else
-                    {
-                        field.AssignLightColor();
-                    }
+                    GameObject rollableField = Instantiate(rollableFieldPrefab);
+                    rollableField.transform.position = new Vector3(x * 10, y * 10, 0);
+                    RollableField field = rollableField.GetComponent<RollableField>();
+                    field.Roll(diceResult: 1);
+
                 } else
                 {
-                    if (y % 2 != 0)
+                    GameObject rollableField = Instantiate(rollableFieldPrefab);
+                    rollableField.transform.position = new Vector3(x * 10, y * 10, 0);
+                    RollableField field = rollableField.GetComponent<RollableField>();
+
+                    if (x % 2 == 0)
                     {
-                        field.AssignDarkColor();
+                        if (y % 2 == 0)
+                        {
+                            field.AssignDarkColor();
+                        }
+                        else
+                        {
+                            field.AssignLightColor();
+                        }
                     }
                     else
                     {
-                        field.AssignLightColor();
+                        if (y % 2 != 0)
+                        {
+                            field.AssignDarkColor();
+                        }
+                        else
+                        {
+                            field.AssignLightColor();
+                        }
                     }
                 }
+
+               
             }
         }
     }
