@@ -124,6 +124,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
     {
         int minCount = 0;
         int maxCount = 3;
+        bool superSkeletons = false;
 
         if (CurrentFieldType == FieldType.NEUTRAL)
         {
@@ -134,6 +135,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         {
            minCount = diceRollResult;
            maxCount = diceRollResult * 5;
+           superSkeletons = true;
         }
         if (CurrentFieldType == FieldType.HIGH_REWARD)
         {
@@ -148,7 +150,16 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         int skeletonCount = UnityEngine.Random.Range(minCount, maxCount);
         for(int i = 0; i < skeletonCount; i++)
         {
-           Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0,0,0)));
+           if(superSkeletons)
+           {
+                Skeleton skeleton = Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0))).GetComponent<Skeleton>();
+                skeleton.moveSpeed = skeleton.moveSpeed * 1.5f;
+                skeleton.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            } 
+            else
+           {
+                Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0)));
+           }
         }
        
     }

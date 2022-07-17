@@ -60,8 +60,6 @@ public class MapManager : MonoBehaviour
                     //TOP RIGHT CORNER OF MAP EXIT HERE BABY
                     GameObject rollableField = Instantiate(exitPrefab);
                     rollableField.transform.position = new Vector3(x * 10, y * 10, 0);
-                    RollableField field = rollableField.GetComponent<RollableField>();
-                    field.Roll(diceResult: 1);
                 } else if(x == 0 && y == 0)
                 {
                     GameObject rollableField = Instantiate(rollableFieldPrefab);
