@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Follow: {fileID: 121596195}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7
+    OrthographicSize: 9
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -190,30 +190,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &121596190 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8779034415638566644, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
-  m_PrefabInstance: {fileID: 1252338673}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &121596191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121596190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b30a3a81d614ea40843a98602dfdcf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  autoAttackMovementDelay: 0.2
-  attackSpeed: 1
-  attackRange: 1.1
-  attackDuration: 0.1
-  attackKnockback: 1
-  autoAttackPrefab: {fileID: 2136152522309262775, guid: bc0dfee84cd9a7d43bc57080effabb1a, type: 3}
 --- !u!4 &121596195 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9109025331774840897, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
@@ -409,7 +385,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -821,6 +797,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 53992723636802212, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 53992723636802212, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
       propertyPath: attackRange
       value: 1
       objectReference: {fileID: 0}
@@ -901,7 +881,7 @@ GameObject:
   - component: {fileID: 1368480563}
   - component: {fileID: 1368480565}
   - component: {fileID: 1368480564}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tilemap_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1233,6 +1213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldDataList:
   - {fileID: 11400000, guid: 8e2aece2d82aaf6418203ea294437067, type: 2}
+  - {fileID: 11400000, guid: 62ce1675c74c1584198dca4ff8968260, type: 2}
+  - {fileID: 11400000, guid: 6dc3e87bf7918b14a86a0dbaad1264dd, type: 2}
 --- !u!4 &1597258859
 Transform:
   m_ObjectHideFlags: 0
