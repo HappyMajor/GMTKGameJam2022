@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Tilemaps;
 
+#if UNITY_EDITOR
 public class FieldEditorManager : MonoBehaviour
 {
     public static Tilemap baseTilemap;
     public static Tilemap middleTilemap;
     public static Tilemap highTilemap;
-
+        
     [MenuItem("Assets/Create/SAVE NEW FIELD")]
     public static void CreateMyAsset()
     {
@@ -71,3 +72,4 @@ public class FieldEditorManager : MonoBehaviour
     }
 
 }
+#endif
