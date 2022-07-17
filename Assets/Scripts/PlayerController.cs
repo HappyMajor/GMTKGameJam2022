@@ -222,7 +222,12 @@ public class PlayerController : MonoBehaviour
         {
             SetHealth(health - 1);
         }
-        if(collision.gameObject.tag == "Consumable")
+       
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Consumable")
         {
             Debug.Log("HIT CONSUMABLE!");
             if (collision.gameObject.GetComponent<Money>() != null)
@@ -260,10 +265,11 @@ public class PlayerController : MonoBehaviour
                     Destroy(collision.gameObject);
                 }));
 
-                if(health + 1 >= maxHealth)
+                if (health + 1 >= maxHealth)
                 {
                     SetHealth(maxHealth);
-                } else
+                }
+                else
                 {
                     SetHealth(health);
                 }

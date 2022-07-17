@@ -9,10 +9,8 @@ public class Devilchest : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("DEVILCHEST COLLISION!");
         if(collision.gameObject.name == "Player")
         {
-            Debug.Log("DEVILCHEST COLLISION COLLISION! PLAYER");
             if (!isOpen)
             {
                 isOpen = true;
