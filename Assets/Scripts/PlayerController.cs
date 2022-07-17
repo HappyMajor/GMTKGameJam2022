@@ -274,7 +274,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    SetHealth(health);
+                    SetHealth(health + 1);
                 }
             }
             else if (collision.gameObject.GetComponent<Powerup>() != null)
