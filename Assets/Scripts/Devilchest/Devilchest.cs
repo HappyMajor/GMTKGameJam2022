@@ -17,6 +17,7 @@ public class Devilchest : MonoBehaviour
             {
                 isOpen = true;
                 GetComponent<Animator>().SetTrigger("Open");
+                PlaySound();
                 StartCoroutine(Routines.DoLater(3, () =>
                 {
                     rollableField.SpawnSkeletons(UnityEngine.Random.Range(1, 10), true);
@@ -27,23 +28,17 @@ public class Devilchest : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private AudioSource audioSource;
+    [SerializeField] public AudioClip sound;
+
+    void Start()
     {
-        Debug.Log("DEVILCHEST TRIGGER COLLISION!");
-        if (collision.gameObject.name == "Player")
-        {
-            Debug.Log("DEVILCHEST TRIGGER COLLISION! PLAYER");
-            if (!isOpen)
-            {
-                isOpen = true;
-                GetComponent<Animator>().SetTrigger("Open");
-                StartCoroutine(Routines.DoLater(3, () =>
-                {
-                    rollableField.SpawnSkeletons(UnityEngine.Random.Range(1, 10), true);
-                    rollableField.SpawnRandomUpgrades(UnityEngine.Random.Range(1, 3));
-                    rollableField.SpawnMoney(UnityEngine.Random.Range(5, 30));
-                }));
-            }
-        }
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public void PlaySound()
+    {
+        audioSource.PlayOneShot(sound);
     }
 }

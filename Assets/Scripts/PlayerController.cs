@@ -229,6 +229,8 @@ public class PlayerController : MonoBehaviour
             {
                 var money = collision.gameObject.GetComponent<Money>();
                 money.PlaySound();
+                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                collision.gameObject.GetComponent<Collider2D>().enabled = false;
                 StartCoroutine(Routines.DoLater(money.sound.length, () =>
                 {
                     Destroy(collision.gameObject);
@@ -239,6 +241,8 @@ public class PlayerController : MonoBehaviour
             {
                 var potion = collision.gameObject.GetComponent<SpeedPotion>();
                 potion.PlaySound();
+                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                collision.gameObject.GetComponent<Collider2D>().enabled = false;
                 StartCoroutine(Routines.DoLater(potion.sound.length, () =>
                 {
                     Destroy(collision.gameObject);
@@ -249,6 +253,8 @@ public class PlayerController : MonoBehaviour
             {
                 var potion = collision.gameObject.GetComponent<HealthPotion>();
                 potion.PlaySound();
+                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                collision.gameObject.GetComponent<Collider2D>().enabled = false;
                 StartCoroutine(Routines.DoLater(potion.sound.length, () =>
                 {
                     Destroy(collision.gameObject);
@@ -266,6 +272,8 @@ public class PlayerController : MonoBehaviour
             {
                 var powerup = collision.gameObject.GetComponent<Powerup>();
                 powerup.PlaySound();
+                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                collision.gameObject.GetComponent<Collider2D>().enabled = false;
                 StartCoroutine(Routines.DoLater(powerup.sound.length, () =>
                 {
                     Destroy(collision.gameObject);
