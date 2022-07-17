@@ -52,10 +52,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerBounds;
     private Camera viewCamera;
     private float attackCooldown;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip attackSound;
 
     public void Start() {
         playerBounds = GetComponent<SpriteRenderer>().bounds.extents;
         viewCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -142,7 +145,6 @@ public class PlayerController : MonoBehaviour
     }
     
     private void spawnAttack(AttackLevelStats stats, Vector3 direction) {
-        Debug.Log("Spawning attack");
         // Create an autoattack
         // Position the projectile at the player's position, but outside the player's sprite bounds
         Vector3 pos = transform.position + direction * playerBounds.x*2;
@@ -158,6 +160,9 @@ public class PlayerController : MonoBehaviour
 
         // Mark it for destruction after some time
         autoAttack.DestroyAfterTime(stats.Duration);
+
+        // Play the attack sound
+        audioSource.PlayOneShot(attackSound);
     }
 
     public bool CanMove()
