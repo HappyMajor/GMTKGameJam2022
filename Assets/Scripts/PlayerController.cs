@@ -82,7 +82,6 @@ public class PlayerController : MonoBehaviour
     {
         this.health = value;
         healthBarSlider.value = value / maxHealth;
-        Debug.Log("healthbar slide value:" + maxHealth / value);
         if (value <= 0)
         {
             //DEATH

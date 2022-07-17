@@ -164,6 +164,23 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
        
     }
 
+    public void SpawnSkeletons (int amount, bool superSkeletons)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            if (superSkeletons)
+            {
+                Skeleton skeleton = Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0))).GetComponent<Skeleton>();
+                skeleton.moveSpeed = skeleton.moveSpeed * 1.5f;
+                skeleton.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0)));
+            }
+        }
+    }
+
     public void SpawnMoney(int amount)
     {
         for (int i = 0; i < amount; i++)
