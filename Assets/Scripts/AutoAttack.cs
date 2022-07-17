@@ -6,6 +6,12 @@ public class AutoAttack : MonoBehaviour
 {
     public float Damage { get; set; }
     public Vector3 Knockback { get; set; }
+    public Vector3 Direction { get; set; }
+
+    public void Start() {
+        // Rotation in the direction
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, Direction);
+    }
 
 
     public void DestroyAfterTime(float seconds)

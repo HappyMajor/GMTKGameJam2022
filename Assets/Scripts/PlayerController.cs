@@ -66,11 +66,15 @@ public class PlayerController : MonoBehaviour
 
     public void CreateAttackSliceEffect()
     {
+        // Get mouse direction
         Vector3 mouseWorldPos = GameObject.Find("Main Camera").GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = transform.position.z;
         Vector3 mouseDirection = (mouseWorldPos - transform.position).normalized;
+
+        // Create an autoattack
         AutoAttack autoAttack = Instantiate(autoAttackPrefab, transform.position + mouseDirection * attackRange, Quaternion.Euler(new Vector3(0, 0, 0)), transform).GetComponent<AutoAttack>();
         autoAttack.Damage = 1;
+        autoAttack.Direction = mouseDirection;
         autoAttack.Knockback = mouseDirection * attackKnockback;
         autoAttack.DestroyAfterTime(attackDuration);
     }
