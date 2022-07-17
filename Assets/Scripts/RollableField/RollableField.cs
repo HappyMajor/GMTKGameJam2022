@@ -199,7 +199,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
             if(randomPotion == 0)
             {
                 potionToSpawn = powerupPrefab;
-            } else if
+            } else
             if (randomPotion == 1)
             {
                 potionToSpawn = speedPotionPrefab;
