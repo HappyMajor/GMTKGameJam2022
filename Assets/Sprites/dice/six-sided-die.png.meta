@@ -294,6 +294,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2260,6 +2261,97 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      six-sided-die_34: 5537388928367445917
+      six-sided-die_42: -6918147206453690318
+      six-sided-die_71: -3520331616723151583
+      six-sided-die_36: -7500755306543159385
+      six-sided-die_79: 3273289704889003988
+      six-sided-die_53: 5907470212037165949
+      six-sided-die_65: -8053252547428623859
+      six-sided-die_32: -6999771121768757554
+      six-sided-die_45: -6707545048475148106
+      six-sided-die_25: -3459156984214246343
+      six-sided-die_10: -1935025786677025786
+      six-sided-die_49: 6132508002701153189
+      six-sided-die_43: 7194014685181424758
+      six-sided-die_62: -3199729947279947988
+      six-sided-die_26: 3068749432626212780
+      six-sided-die_5: 3676036708124925820
+      six-sided-die_35: -750091163424738806
+      six-sided-die_55: 4947582603750296791
+      six-sided-die_70: -9094379600884430407
+      six-sided-die_31: 7076368617540732325
+      six-sided-die_56: 8276185624724654802
+      six-sided-die_28: -6429820477000413775
+      six-sided-die_46: 2988887474667428830
+      six-sided-die_3: 2316804087462650539
+      six-sided-die_4: 5343465589085360479
+      six-sided-die_15: -5432313183104260274
+      six-sided-die_86: 4188624964934485348
+      six-sided-die_7: -6661916479766470766
+      six-sided-die_68: 6420938613829557477
+      six-sided-die_44: 8822196369566499563
+      six-sided-die_47: -2076685313259844512
+      six-sided-die_73: 7836491130459343097
+      six-sided-die_20: -1326053653111860556
+      six-sided-die_85: -3830236765773617781
+      six-sided-die_88: 4601167359852579033
+      six-sided-die_38: -7067318338445233986
+      six-sided-die_60: 972779749254518045
+      six-sided-die_78: 3217358758903335274
+      six-sided-die_61: 7258986493638793513
+      six-sided-die_29: 6460472288483714977
+      six-sided-die_0: 1660960300311996227
+      six-sided-die_9: 2140540486881240039
+      six-sided-die_17: 5486154154207577192
+      six-sided-die_87: -7430970354549404741
+      six-sided-die_33: 6570149643857726459
+      six-sided-die_37: 9147949349935652342
+      six-sided-die_14: -7804123735211847550
+      six-sided-die_8: -435328481699391707
+      six-sided-die_57: -2697809183759019924
+      six-sided-die_75: 4996257777542978604
+      six-sided-die_22: 9180178609985022153
+      six-sided-die_40: -6782868927171861043
+      six-sided-die_11: -8009864555633826891
+      six-sided-die_27: 1454451941898578118
+      six-sided-die_84: -5456566417374081661
+      six-sided-die_81: -844264605209150392
+      six-sided-die_13: 8227144245588308527
+      six-sided-die_72: 3073001828226143916
+      six-sided-die_67: -7886526707747023318
+      six-sided-die_24: 8502582192812335102
+      six-sided-die_58: -3328314927820482635
+      six-sided-die_63: 3728848918057410887
+      six-sided-die_30: 4453805313312688012
+      six-sided-die_18: 4712173239084501851
+      six-sided-die_74: -4681681219238069146
+      six-sided-die_51: 3268608190832396784
+      six-sided-die_59: -7740494797794907434
+      six-sided-die_19: -6928263091856156972
+      six-sided-die_82: 537685987526624933
+      six-sided-die_52: 4399948701322403683
+      six-sided-die_54: -9215687674907874423
+      six-sided-die_48: 8905318619370250119
+      six-sided-die_39: 1683804374302066680
+      six-sided-die_76: 635498321779007331
+      six-sided-die_1: -9108733845173200575
+      six-sided-die_12: -421792312639679249
+      six-sided-die_23: -2079014514073080549
+      six-sided-die_89: 8769604613372534973
+      six-sided-die_64: 4406284243273563191
+      six-sided-die_6: -87180655799897434
+      six-sided-die_41: 4313226638243283971
+      six-sided-die_50: 8034222437262216310
+      six-sided-die_77: 6206790508709510216
+      six-sided-die_21: 3246088255924340341
+      six-sided-die_83: 4448239096562950005
+      six-sided-die_69: -8785146679920161572
+      six-sided-die_2: -8658091385712679357
+      six-sided-die_80: -7462036309814128813
+      six-sided-die_16: 6381597435985317750
+      six-sided-die_66: 6003635228516845807
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
