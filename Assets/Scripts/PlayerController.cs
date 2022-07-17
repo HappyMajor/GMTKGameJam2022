@@ -13,7 +13,8 @@ public struct AttackLevelStats
     float range,
     float duration,
     float knockback,
-    int damage
+    int damage,
+    float cooldown
     )
   {
     Duration = duration;
@@ -21,34 +22,36 @@ public struct AttackLevelStats
     Range = range;
     Speed = speed;
     Damage = damage;
+    Cooldown = cooldown;
   }
 
   public float Duration { get; }
   public float Knockback { get; }
   public float Range { get; }
-  //defined as attacks per second
   public float Speed { get; }
   public float Damage { get; }
+  //defined as attacks per second
+  public float Cooldown { get; }
 }
 
 public class PlayerController : MonoBehaviour
 {
     private IDictionary<AttackLevel, AttackLevelStats> weaponLevelStats = new Dictionary<AttackLevel, AttackLevelStats>()
     {
-        { AttackLevel.One, new AttackLevelStats(speed: 1.5f, range: 1.0f, duration: 0.05f, knockback: 1.0f, damage: 1) },
-        { AttackLevel.Two, new AttackLevelStats(speed: 5.0f, range: 4.0f, duration: 1.00f, knockback: 1.4f, damage: 1) },
-        { AttackLevel.Three, new AttackLevelStats(speed: 5.0f, range: 4.0f, duration: 1.00f, knockback: 1.4f, damage: 1) },
-        { AttackLevel.Four, new AttackLevelStats(speed: 8.0f, range: 6.0f, duration: 1.00f, knockback: 1.4f, damage: 1) }
+        { AttackLevel.One, new AttackLevelStats(speed: 1.5f, range: 1.0f, duration: 0.05f, knockback: 1.0f, damage: 1, cooldown: 2.0f) },
+        { AttackLevel.Two, new AttackLevelStats(speed: 5.0f, range: 4.0f, duration: 1.00f, knockback: 1.4f, damage: 1, cooldown: 2.0f) },
+        { AttackLevel.Three, new AttackLevelStats(speed: 5.0f, range: 4.0f, duration: 1.00f, knockback: 1.4f, damage: 1, cooldown: 1.0f) },
+        { AttackLevel.Four, new AttackLevelStats(speed: 8.0f, range: 6.0f, duration: 1.00f, knockback: 1.4f, damage: 1, cooldown: 0.8f) }
     };
     [SerializeField] private AttackLevel attackLevel = AttackLevel.One;
     public float moveSpeed;
     public float autoAttackMovementDelay;
     public GameObject autoAttackPrefab;
 
-    private float lastAuttoAttackTime;
     private bool isMovementBlockedByAttack = false;
     private Vector3 playerBounds;
     private Camera viewCamera;
+    private float attackCooldown;
 
     public void Start() {
         playerBounds = GetComponent<SpriteRenderer>().bounds.extents;
@@ -75,57 +78,67 @@ public class PlayerController : MonoBehaviour
 
     public void CheckAndDoAttack()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if(CanAutoAttack())
-            {
-                Attack();
-            } else
-            {
-                Debug.Log("Autoattack on cooldown!");
-            }
+        // Update attack cooldown counter
+        attackCooldown -= Time.deltaTime;
+
+        // Can't attack during cooldown
+        if (attackCooldown > 0) {
+            return;
+        }
+
+        // Attack if pressing the attack button
+        if (Input.GetMouseButtonDown(0)) {
+            Attack();
         }
     }
 
     public void Attack()
     {
-        lastAuttoAttackTime = Time.time;
+        // Attack stats
+        var stats = getAttackStats();
+
+        // We're going to attack, so set the cooldown before next attack is allowed
+        attackCooldown += stats.Cooldown;
+
+        // Can't move while attacking
         isMovementBlockedByAttack = true;
 
-        CreateAttackSliceEffect();
+        // Attack direction
+        var direction = getMouseDirection();
 
+        // Create the fireballs
+        CreateAttackEffect(stats: stats, direction: direction);
 
-        //remove the block in a few seconds defined by @autoAttackMovementDelay 
+        // Allow player to move again after a delay
         StartCoroutine(Routines.DoLater(autoAttackMovementDelay, () =>
         {
             isMovementBlockedByAttack = false;
         }));
     }
 
-    public void CreateAttackSliceEffect()
+    public void CreateAttackEffect(AttackLevelStats stats, Vector3 direction)
     {
-        // Get mouse direction
-        Vector3 mouseWorldPos = viewCamera.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPos.z = transform.position.z;
-        Vector3 mouseDirection = (mouseWorldPos - transform.position).normalized;
-
-        // Attack stats
-        var stats = getAttackStats();
-
         // Attack
         if (attackLevel == AttackLevel.Three) {
             // Spawn multiple fireballs at angles
-            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, 10) * mouseDirection);
-            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, -10) * mouseDirection);
+            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, 10) * direction);
+            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, -10) * direction);
         }
         else if (attackLevel == AttackLevel.Four) {
             // Spawn multiple fireballs at angles
-            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, 15) * mouseDirection);
-            spawnAttack(stats: stats, direction: mouseDirection);
-            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, -15) * mouseDirection);
+            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, 15) * direction);
+            spawnAttack(stats: stats, direction: direction);
+            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, -15) * direction);
         } else {
-            spawnAttack(stats: stats, direction: mouseDirection);
+            spawnAttack(stats: stats, direction: direction);
         }
+    }
+    
+    private Vector3 getMouseDirection() {
+        Vector3 mouseWorldPos = viewCamera.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = transform.position.z;
+        
+        return (mouseWorldPos - transform.position).normalized;
     }
     
     private void spawnAttack(AttackLevelStats stats, Vector3 direction) {
@@ -150,11 +163,6 @@ public class PlayerController : MonoBehaviour
     public bool CanMove()
     {
         return !isMovementBlockedByAttack;
-    }
-
-    public bool CanAutoAttack()
-    {
-        return Time.time >= lastAuttoAttackTime + 1f/ getAttackStats().Speed;
     }
 
     // Attack stats for the current weapon level
