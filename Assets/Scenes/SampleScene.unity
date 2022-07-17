@@ -787,6 +787,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &683020935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3792973415188245123, guid: e396136616a45274da27eb9867904458, type: 3}
+  m_PrefabInstance: {fileID: 781821681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &774257043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1366,10 @@ PrefabInstance:
       propertyPath: attackDuration
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 53992723636802212, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
+      propertyPath: healthBarSlider
+      value: 
+      objectReference: {fileID: 683020935}
     - target: {fileID: 53992723636802212, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
       propertyPath: autoAttackPrefab
       value: 

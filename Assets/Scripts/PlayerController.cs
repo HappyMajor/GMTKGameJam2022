@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum AttackLevel {
     One, Two, Three, Four
@@ -44,8 +45,13 @@ public class PlayerController : MonoBehaviour
         { AttackLevel.Four, new AttackLevelStats(speed: 8.0f, range: 6.0f, duration: 1.00f, knockback: 1.4f, damage: 1, cooldown: 0.8f) }
     };
     [SerializeField] private AttackLevel attackLevel = AttackLevel.One;
+
+    public float health = 3;
+    public float maxHealth = 3;
+
     public float moveSpeed;
     public float autoAttackMovementDelay;
+    public Slider healthBarSlider;
     public GameObject autoAttackPrefab;
 
     private bool isMovementBlockedByAttack = false;
@@ -65,6 +71,17 @@ public class PlayerController : MonoBehaviour
     {
         CheckAndDoMovement();
         CheckAndDoAttack();
+    }
+
+    private void SetHealth(float value)
+    {
+        this.health = value;
+        healthBarSlider.value = value / maxHealth;
+        Debug.Log("healthbar slide value:" + maxHealth / value);
+        if (value <= 0)
+        {
+            //DEATH
+        }
     }
 
     public void CheckAndDoMovement()
@@ -187,6 +204,14 @@ public class PlayerController : MonoBehaviour
                 return AttackLevel.One;
             default:
                 return AttackLevel.One;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Monster")
+        {
+            SetHealth(health - 1);
         }
     }
 }
