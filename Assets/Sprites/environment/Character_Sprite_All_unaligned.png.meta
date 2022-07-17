@@ -141,6 +141,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -994,6 +995,44 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Character_Sprite_All_unaligned_32: -2196100092283567432
+      Character_Sprite_All_unaligned_1: 8813174679024688132
+      Character_Sprite_All_unaligned_6: -6656941654745593090
+      Character_Sprite_All_unaligned_17: 174282201388457343
+      Character_Sprite_All_unaligned_12: -5427882888578018536
+      Character_Sprite_All_unaligned_38: 6843888274102048208
+      Character_Sprite_All_unaligned_11: -6624703903649017914
+      Character_Sprite_All_unaligned_19: -7861950133380832481
+      Character_Sprite_All_unaligned_2: -9132711867166712422
+      Character_Sprite_All_unaligned_14: -1263952691511910915
+      Character_Sprite_All_unaligned_21: 6786233762927377740
+      Character_Sprite_All_unaligned_34: 6614382628870000122
+      Character_Sprite_All_unaligned_4: 5378848398135595724
+      Character_Sprite_All_unaligned_5: 8920918865856260675
+      Character_Sprite_All_unaligned_23: -5884861234539452863
+      Character_Sprite_All_unaligned_27: -6694416917056290253
+      Character_Sprite_All_unaligned_35: -4542701964267139677
+      Character_Sprite_All_unaligned_37: -666112678077174092
+      Character_Sprite_All_unaligned_3: -636484996338469265
+      Character_Sprite_All_unaligned_28: 996950402562324707
+      Character_Sprite_All_unaligned_0: -2562541130055523284
+      Character_Sprite_All_unaligned_10: -293713286272519821
+      Character_Sprite_All_unaligned_9: -7828544049113810708
+      Character_Sprite_All_unaligned_7: 8116409590824322906
+      Character_Sprite_All_unaligned_36: 7476520368904863147
+      Character_Sprite_All_unaligned_31: -5874189491333623838
+      Character_Sprite_All_unaligned_22: -315977011034530016
+      Character_Sprite_All_unaligned_15: -9188205899417576363
+      Character_Sprite_All_unaligned_30: -1128992631377154609
+      Character_Sprite_All_unaligned_33: -1895950425208718049
+      Character_Sprite_All_unaligned_26: 4707853726613150968
+      Character_Sprite_All_unaligned_13: 847999808386029879
+      Character_Sprite_All_unaligned_16: -3547963534551297163
+      Character_Sprite_All_unaligned_29: 1039945234989946098
+      Character_Sprite_All_unaligned_8: -6478021940194979744
+      Character_Sprite_All_unaligned_24: 2666229970882909524
+      Character_Sprite_All_unaligned_25: 2503916811969318208
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
