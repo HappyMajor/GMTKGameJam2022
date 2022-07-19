@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 1239949212850743135}
   - component: {fileID: 9158073553089684547}
   - component: {fileID: 1990250300434084185}
-  - component: {fileID: 7042832391413838839}
+  - component: {fileID: 7690411774879909822}
   m_Layer: 0
   m_Name: Devilchest
   m_TagString: Untagged
@@ -251,9 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a286966df18edb44f87910a5e2bc13b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollableField: {fileID: 3602820772509777547}
   sound: {fileID: 8300000, guid: 8f7b0cad3d1d0ec428b2c101602082e7, type: 3}
---- !u!82 &7042832391413838839
+  rollableField: {fileID: 3602820772509777547}
+--- !u!82 &7690411774879909822
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,17 +265,17 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.659
-  m_Pitch: -0.58
+  m_Volume: 0.729
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0.229
+  Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -324,7 +324,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.35277778
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -5,17 +5,19 @@ using UnityEngine;
 public class Devilchest : MonoBehaviour
 {
     private bool isOpen = false;
+    private AudioSource audioSource;
+    [SerializeField] public AudioClip sound;
     public RollableField rollableField;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
             if (!isOpen)
             {
+                PlaySound();
                 isOpen = true;
                 GetComponent<Animator>().SetTrigger("Open");
-                PlaySound();
                 StartCoroutine(Routines.DoLater(3, () =>
                 {
                     rollableField.SpawnSkeletons(UnityEngine.Random.Range(1, 10), true);
@@ -27,12 +29,14 @@ public class Devilchest : MonoBehaviour
     }
 
 
-    private AudioSource audioSource;
-    [SerializeField] public AudioClip sound;
+
+
+
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        //PlaySound();
     }
 
     public void PlaySound()
