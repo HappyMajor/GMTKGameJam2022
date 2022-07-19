@@ -58,6 +58,22 @@ public class Skeleton : MonoBehaviour, IMonster
 
     }
 
+    public void Die()
+    {
+        StartCoroutine(Routines.DoLater(3, () =>
+        {
+            Destroy(this.gameObject);
+        }));
+        animator.SetBool("Death", true);
+        isDead = true;
+
+        //Deactivate collision so it does not block other skeletons and wont damage the player anymore
+        GetComponent<CircleCollider2D>().enabled = false;
+
+        // Play sound
+        audioSource.PlayOneShot(deathSound);
+    }
+
     public void ApplyDamage(float dmg)
     {
         if(!isDead)
@@ -65,15 +81,7 @@ public class Skeleton : MonoBehaviour, IMonster
             this.health -= dmg;
             if (this.health <= 0)
             {
-                StartCoroutine(Routines.DoLater(3, () =>
-                {
-                    Destroy(this.gameObject);
-                }));
-                animator.SetBool("Death",true);
-                isDead = true;
-
-                // Play sound
-                audioSource.PlayOneShot(deathSound);
+                Die();
             }
         }
     }

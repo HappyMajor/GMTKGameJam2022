@@ -222,74 +222,87 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
-            SetHealth(health - 1);
-            
+            OnCollideWithMonster(collision.gameObject);
         }
        
+    }
+
+    private void OnCollideWithMonster(GameObject monster)
+    {
+        Skeleton skeleton = monster.GetComponent<Skeleton>();
+
+        if (skeleton != null)
+        {
+            SetHealth(health - 1);
+        }
+    }
+
+    private void OnCollidWithConsumable(GameObject consumable)
+    {
+        if (consumable.GetComponent<Money>() != null)
+        {
+            var money = consumable.gameObject.GetComponent<Money>();
+            money.PlaySound();
+            consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            consumable.gameObject.GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(Routines.DoLater(money.sound.length, () =>
+            {
+                Destroy(consumable.gameObject);
+            }));
+            SetGold(gold + 1);
+        }
+        else if (consumable.gameObject.GetComponent<SpeedPotion>() != null)
+        {
+            var potion = consumable.gameObject.GetComponent<SpeedPotion>();
+            potion.PlaySound();
+            consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            consumable.gameObject.GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(Routines.DoLater(potion.sound.length, () =>
+            {
+                Destroy(consumable.gameObject);
+            }));
+            moveSpeed += 1f;
+        }
+        else if (consumable.gameObject.GetComponent<HealthPotion>() != null)
+        {
+            var potion = consumable.gameObject.GetComponent<HealthPotion>();
+            potion.PlaySound();
+            consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            consumable.gameObject.GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(Routines.DoLater(potion.sound.length, () =>
+            {
+                Destroy(consumable.gameObject);
+            }));
+
+            if (health + 1 >= maxHealth)
+            {
+                SetHealth(maxHealth);
+            }
+            else
+            {
+                SetHealth(health + 1);
+            }
+        }
+        else if (consumable.gameObject.GetComponent<Powerup>() != null)
+        {
+            var powerup = consumable.gameObject.GetComponent<Powerup>();
+            powerup.PlaySound();
+            consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            consumable.gameObject.GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(Routines.DoLater(powerup.sound.length, () =>
+            {
+                Destroy(consumable.gameObject);
+            }));
+
+            this.attackLevel = getNextWeaponLevel();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Consumable")
         {
-            Debug.Log("HIT CONSUMABLE!");
-            if (collision.gameObject.GetComponent<Money>() != null)
-            {
-                var money = collision.gameObject.GetComponent<Money>();
-                money.PlaySound();
-                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                collision.gameObject.GetComponent<Collider2D>().enabled = false;
-                StartCoroutine(Routines.DoLater(money.sound.length, () =>
-                {
-                    Destroy(collision.gameObject);
-                }));
-                SetGold(gold + 1);
-            }
-            else if (collision.gameObject.GetComponent<SpeedPotion>() != null)
-            {
-                var potion = collision.gameObject.GetComponent<SpeedPotion>();
-                potion.PlaySound();
-                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                collision.gameObject.GetComponent<Collider2D>().enabled = false;
-                StartCoroutine(Routines.DoLater(potion.sound.length, () =>
-                {
-                    Destroy(collision.gameObject);
-                }));
-                moveSpeed += 1f;
-            }
-            else if (collision.gameObject.GetComponent<HealthPotion>() != null)
-            {
-                var potion = collision.gameObject.GetComponent<HealthPotion>();
-                potion.PlaySound();
-                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                collision.gameObject.GetComponent<Collider2D>().enabled = false;
-                StartCoroutine(Routines.DoLater(potion.sound.length, () =>
-                {
-                    Destroy(collision.gameObject);
-                }));
-
-                if (health + 1 >= maxHealth)
-                {
-                    SetHealth(maxHealth);
-                }
-                else
-                {
-                    SetHealth(health + 1);
-                }
-            }
-            else if (collision.gameObject.GetComponent<Powerup>() != null)
-            {
-                var powerup = collision.gameObject.GetComponent<Powerup>();
-                powerup.PlaySound();
-                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                collision.gameObject.GetComponent<Collider2D>().enabled = false;
-                StartCoroutine(Routines.DoLater(powerup.sound.length, () =>
-                {
-                    Destroy(collision.gameObject);
-                }));
-
-                this.attackLevel = getNextWeaponLevel();
-            }
+            OnCollidWithConsumable(collision.gameObject);
         }
     }
 }
