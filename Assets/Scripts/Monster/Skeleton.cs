@@ -41,14 +41,16 @@ public class Skeleton : MonoBehaviour, IMonster
                 animator.SetBool("Walk",true);
             }
 
-            if (Util.AngleDir(new Vector2(transform.position.x, transform.position.y), new Vector2(movePosition.x, movePosition.y)) <= 0) {
-                //left
-                transform.localScale = new Vector3(1, 1, 1);
-            } else
+            if (Util.IsALeftOfB(transform.position, player.transform.position))
             {
-                //right
+                //is left of the player so turn right
+                transform.localScale = new Vector3(1, 1, 1);
+            } else 
+            {
+                //is right of the player so turn left
                 transform.localScale = new Vector3(-1, 1, 1);
             }
+
         } else
         {
           animator.SetBool("Walk", false);

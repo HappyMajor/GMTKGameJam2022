@@ -8,4 +8,11 @@ public class Util
     {
         return -A.x * B.y + A.y * B.x;
     }
+
+    public static bool IsALeftOfB(Vector3 a, Vector3 b)
+    {
+        if (a.x - b.x < 0) return true;
+
+        return false;
+    }
 }
