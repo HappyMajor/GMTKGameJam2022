@@ -146,8 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a286966df18edb44f87910a5e2bc13b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skeletonPrefab: {fileID: 0}
+  goldPrefab: {fileID: 0}
+  potions: []
   sound: {fileID: 8300000, guid: 8f7b0cad3d1d0ec428b2c101602082e7, type: 3}
-  rollableField: {fileID: 0}
 --- !u!82 &7425784918153394606
 AudioSource:
   m_ObjectHideFlags: 0
@@ -155,7 +157,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552602111996896010}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
