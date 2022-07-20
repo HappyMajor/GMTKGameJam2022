@@ -15,16 +15,12 @@ public class Skeleton : MonoBehaviour, IMonster
     private GameObject player;
     private Animator animator;
     private bool isDead = false;
-    private AudioSource audioSource;
-    [SerializeField] private AudioClip deathSound;
-
 
     public void Start()
     {
         player = GameObject.Find("Player");
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     public void FixedUpdate()
@@ -69,9 +65,6 @@ public class Skeleton : MonoBehaviour, IMonster
 
         //Deactivate collision so it does not block other skeletons and wont damage the player anymore
         GetComponent<CircleCollider2D>().enabled = false;
-
-        // Play sound
-        audioSource.PlayOneShot(deathSound);
     }
 
     public void ApplyDamage(float dmg)

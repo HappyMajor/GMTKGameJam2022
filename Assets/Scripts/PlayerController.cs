@@ -236,37 +236,25 @@ public class PlayerController : MonoBehaviour
         if (consumable.GetComponent<Money>() != null)
         {
             var money = consumable.gameObject.GetComponent<Money>();
-            money.PlaySound();
             consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             consumable.gameObject.GetComponent<Collider2D>().enabled = false;
-            StartCoroutine(Routines.DoLater(money.sound.length, () =>
-            {
-                Destroy(consumable.gameObject);
-            }));
+            Destroy(consumable.gameObject);
             SetGold(gold + 1);
         }
         else if (consumable.gameObject.GetComponent<SpeedPotion>() != null)
         {
             var potion = consumable.gameObject.GetComponent<SpeedPotion>();
-            potion.PlaySound();
             consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             consumable.gameObject.GetComponent<Collider2D>().enabled = false;
-            StartCoroutine(Routines.DoLater(potion.sound.length, () =>
-            {
-                Destroy(consumable.gameObject);
-            }));
+            Destroy(consumable.gameObject);
             moveSpeed += 1f;
         }
         else if (consumable.gameObject.GetComponent<HealthPotion>() != null)
         {
             var potion = consumable.gameObject.GetComponent<HealthPotion>();
-            potion.PlaySound();
             consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             consumable.gameObject.GetComponent<Collider2D>().enabled = false;
-            StartCoroutine(Routines.DoLater(potion.sound.length, () =>
-            {
-                Destroy(consumable.gameObject);
-            }));
+            Destroy(consumable.gameObject);
 
             if (health + 1 >= maxHealth)
             {
@@ -280,13 +268,9 @@ public class PlayerController : MonoBehaviour
         else if (consumable.gameObject.GetComponent<Powerup>() != null)
         {
             var powerup = consumable.gameObject.GetComponent<Powerup>();
-            powerup.PlaySound();
             consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             consumable.gameObject.GetComponent<Collider2D>().enabled = false;
-            StartCoroutine(Routines.DoLater(powerup.sound.length, () =>
-            {
-                Destroy(consumable.gameObject);
-            }));
+            Destroy(consumable.gameObject);
 
             this.attackLevel = getNextWeaponLevel();
         }

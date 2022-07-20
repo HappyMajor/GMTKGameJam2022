@@ -106,7 +106,6 @@ MonoBehaviour:
   moveSpeed: 1
   weight: 1
   shockDuration: 1
-  deathSound: {fileID: 8300000, guid: b009b186cf71a4e3e914977c35a52644, type: 3}
 --- !u!50 &3987907860117626303
 Rigidbody2D:
   serializedVersion: 4
