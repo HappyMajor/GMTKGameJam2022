@@ -29,7 +29,7 @@ public abstract class Field : MonoBehaviour, IPointerClickHandler
         });
     }
 
-    private void ActivateField(int diceRollResult)
+    public void ActivateField(int diceRollResult)
     {
         GenerateTileFieldSquare();
         Fade();

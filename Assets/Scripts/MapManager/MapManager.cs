@@ -68,10 +68,11 @@ public class MapManager : MonoBehaviour
                     rollableField.transform.position = new Vector3(x * 10, y * 10, 0);
                 } else if(x == 0 && y == 0)
                 {
-                    GameObject rollableField = Instantiate(rollableFieldPrefab);
+                    //Field the player spawns on
+                    GameObject rollableField = Instantiate(neutralFieldPrefab);
                     rollableField.transform.position = new Vector3(x * 10, y * 10, 0);
-                    RollableField field = rollableField.GetComponent<RollableField>();
-                    field.Roll(diceResult: 1);
+                    NeutralField field = rollableField.GetComponent<NeutralField>();
+                    field.ActivateField(diceRollResult: 0);
 
                 } else
                 {
