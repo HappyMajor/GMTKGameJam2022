@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Devilchest : MonoBehaviour
 {
+    public GameObject skeletonPrefab;
+    public GameObject goldPrefab;
+    public GameObject[] potions;
+
     private bool isOpen = false;
     private AudioSource audioSource;
     [SerializeField] public AudioClip sound;
-    public RollableField rollableField;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,18 +23,41 @@ public class Devilchest : MonoBehaviour
                 GetComponent<Animator>().SetTrigger("Open");
                 StartCoroutine(Routines.DoLater(3, () =>
                 {
-                    rollableField.SpawnSkeletons(UnityEngine.Random.Range(1, 10), true);
-                    rollableField.SpawnRandomUpgrades(UnityEngine.Random.Range(1, 3));
-                    rollableField.SpawnMoney(UnityEngine.Random.Range(5, 30));
+                    SpawnSkeletons();
+                    SpawnGold();
+                    SpawnPotions();
                 }));
             }
         }
     }
 
+    private void SpawnSkeletons()
+    {
+        for (int i = 0; i < UnityEngine.Random.Range(1, 10); i++)
+        {
+            Vector3 randomPosition = Util.GetRandomPositionOfRectangle(transform.parent.position, 10, 10);
+            Instantiate(skeletonPrefab, randomPosition, Quaternion.Euler(new Vector3(0, 0, 0)));
+        }
+    }
 
 
+    private void SpawnGold()
+    {
+        for (int i = 0; i < UnityEngine.Random.Range(1, 15); i++)
+        {
+            Vector3 randomPosition = Util.GetRandomPositionOfRectangle(transform.parent.position, 10, 10);
+            Instantiate(goldPrefab, randomPosition, Quaternion.Euler(new Vector3(0, 0, 0)));
+        }
+    }
 
-
+    private void SpawnPotions()
+    {
+        for (int i = 0; i < UnityEngine.Random.Range(1, 4); i++)
+        {
+            Vector3 randomPosition = Util.GetRandomPositionOfRectangle(transform.parent.position, 10, 10);
+            Instantiate(potions[UnityEngine.Random.Range(0,potions.Length)], randomPosition, Quaternion.Euler(new Vector3(0, 0, 0)));
+        }
+    }
 
     void Start()
     {

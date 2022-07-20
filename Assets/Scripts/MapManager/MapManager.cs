@@ -10,6 +10,12 @@ public class MapManager : MonoBehaviour
     public GameObject exitPrefab;
     public GameObject invisibleWallPrefab;
 
+
+    public GameObject chestFieldPrefab;
+    public GameObject monsterFieldPrefab;
+    public GameObject goldFieldPrefab;
+    public GameObject neutralFieldPrefab;
+
     private void Start()
     {
         GenerateMap();
@@ -69,36 +75,43 @@ public class MapManager : MonoBehaviour
 
                 } else
                 {
-                    GameObject rollableField = Instantiate(rollableFieldPrefab);
+                    //Spawn field
+                    GameObject rollableField = Instantiate(ChooseRandomFieldType());
                     rollableField.transform.position = new Vector3(x * 10, y * 10, 0);
-                    RollableField field = rollableField.GetComponent<RollableField>();
-
-                    if (x % 2 == 0)
-                    {
-                        if (y % 2 == 0)
-                        {
-                            field.AssignDarkColor();
-                        }
-                        else
-                        {
-                            field.AssignLightColor();
-                        }
-                    }
-                    else
-                    {
-                        if (y % 2 != 0)
-                        {
-                            field.AssignDarkColor();
-                        }
-                        else
-                        {
-                            field.AssignLightColor();
-                        }
-                    }
-                }
-
-               
+                }        
             }
         }
+    }
+
+    public GameObject ChooseRandomFieldType()
+    {
+        int randomNumber = UnityEngine.Random.Range(0, 100);
+        GameObject fieldType = null;
+
+        if (randomNumber < 20)
+        {
+            //20%
+            fieldType = chestFieldPrefab;
+        }
+        else if (randomNumber >= 20 && randomNumber < 30)
+        {
+            //10%
+            fieldType = monsterFieldPrefab;
+        }
+        else if (randomNumber >= 30 && randomNumber < 40)
+        {
+            //10%
+            fieldType = goldFieldPrefab;
+        }
+        else if(randomNumber >= 40 && randomNumber < 100)
+        {
+            //60%
+            fieldType = neutralFieldPrefab;
+        } else
+        {
+            fieldType = neutralFieldPrefab;
+        }
+
+        return fieldType;
     }
 }

@@ -15,4 +15,12 @@ public class Util
 
         return false;
     }
+
+    public static Vector3 GetRandomPositionOfRectangle(Vector3 center, float width, float height)
+    {
+        float x = UnityEngine.Random.Range(-width/2, width/2);
+        float y = UnityEngine.Random.Range(-height/2, height/2);
+
+        return center + new Vector3(x, y, 0);
+    }
 }

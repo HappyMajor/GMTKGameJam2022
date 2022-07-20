@@ -32,49 +32,6 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
 
     public FieldType CurrentFieldType {get; set; }
 
-    public Color darkMainColor;
-    public Color lightMainColor;
-
-    public void AssignDarkColor()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        this.spriteRenderer.color = darkMainColor;
-    }
-
-    public void AssignLightColor()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        this.spriteRenderer.color = lightMainColor;
-    }
-
-    public struct RollableFieldProps
-    {
-        public RollableFieldProps(
-          float speed,
-          float range,
-          float duration,
-          float knockback,
-          int damage,
-          float cooldown
-          )
-        {
-            Duration = duration;
-            Knockback = knockback;
-            Range = range;
-            Speed = speed;
-            Damage = damage;
-            Cooldown = cooldown;
-        }
-
-        public float Duration { get; }
-        public float Knockback { get; }
-        public float Range { get; }
-        public float Speed { get; }
-        public float Damage { get; }
-        //defined as attacks per second
-        public float Cooldown { get; }
-    }
-
     private void Start()
     {
         fieldDatabase = GameObject.Find("FieldDatabase").GetComponent<FieldDatabase>();

@@ -9,6 +9,28 @@ public class Routines : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         action.Invoke();
-       
+    }
+
+    public static IEnumerator DoEverySeconds(float seconds, Action action)
+    {
+        while(true)
+        {
+            action.Invoke();
+            yield return new WaitForSeconds(seconds);
+        }
+    }
+
+    public static IEnumerator DoEverySecondsAndEndAfter(float interval, float end, Action action)
+    {
+        float deltaTime = 0f;
+        bool firstStep = true;
+        while (true)
+        {
+            if (deltaTime >= end) break;
+            if (firstStep != true) deltaTime += interval;
+            firstStep = false;
+            action.Invoke();
+            yield return new WaitForSeconds(interval);
+        }
     }
 }
