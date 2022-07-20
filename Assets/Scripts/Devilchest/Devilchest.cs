@@ -9,8 +9,6 @@ public class Devilchest : MonoBehaviour
     public GameObject[] potions;
 
     private bool isOpen = false;
-    private AudioSource audioSource;
-    [SerializeField] public AudioClip sound;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -18,7 +16,6 @@ public class Devilchest : MonoBehaviour
         {
             if (!isOpen)
             {
-                PlaySound();
                 isOpen = true;
                 GetComponent<Animator>().SetTrigger("Open");
                 StartCoroutine(Routines.DoLater(3, () =>
@@ -57,16 +54,5 @@ public class Devilchest : MonoBehaviour
             Vector3 randomPosition = Util.GetRandomPositionOfRectangle(transform.parent.position, 10, 10);
             Instantiate(potions[UnityEngine.Random.Range(0,potions.Length)], randomPosition, Quaternion.Euler(new Vector3(0, 0, 0)));
         }
-    }
-
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-        //PlaySound();
-    }
-
-    public void PlaySound()
-    {
-        audioSource.PlayOneShot(sound);
     }
 }

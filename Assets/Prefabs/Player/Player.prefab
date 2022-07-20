@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4251105035537251284}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   autoAttackMovementDelay: 0.1
   healthBarSlider: {fileID: 0}
   autoAttackPrefab: {fileID: 0}
-  attackSound: {fileID: 0}
+  replayMenu: {fileID: 0}
 --- !u!95 &4251105035537251284
 Animator:
   serializedVersion: 4
