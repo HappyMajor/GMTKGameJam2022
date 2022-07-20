@@ -22,7 +22,7 @@ public abstract class Field : MonoBehaviour, IPointerClickHandler
     public void ThrowDice()
     {
         isRolled = true;
-        Dice dice = Instantiate(dicePrefab, player.transform.position, Quaternion.Euler(new Vector3(0, 0, 0))).GetComponent<Dice>();
+        Dice dice = Instantiate(dicePrefab, player.transform.position + new Vector3(0,0,-1), Quaternion.Euler(new Vector3(0, 0, 0))).GetComponent<Dice>();
         dice.ThrowAtTarget(transform.position, (int diceRollResult) =>
         {
             ActivateField(diceRollResult);
@@ -36,6 +36,7 @@ public abstract class Field : MonoBehaviour, IPointerClickHandler
         MakeFieldPassable();
         Reveal(diceRollResult);
     }
+
 
     private void Fade()
     {

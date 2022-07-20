@@ -55,18 +55,25 @@ public class PlayerController : MonoBehaviour
     public Slider healthBarSlider;
     public GameObject autoAttackPrefab;
     public GameObject replayMenu;
+    public bool invulnerable = false;
+    public bool isInShock = false;
+    public float shockDuration = 0.15f;
 
     private bool isMovementBlockedByAttack = false;
     private Vector3 playerBounds;
     private Camera viewCamera;
     private float attackCooldown;
     private AudioSource audioSource;
+    private Animator animator;
+    private Rigidbody2D rigidBody;
     [SerializeField] private AudioClip attackSound;
 
     public void Start() {
         playerBounds = GetComponent<SpriteRenderer>().bounds.extents;
         viewCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     public void Update()
@@ -153,16 +160,16 @@ public class PlayerController : MonoBehaviour
         // Attack
         if (attackLevel == AttackLevel.Three) {
             // Spawn multiple fireballs at angles
-            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, 10) * direction);
-            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, -10) * direction);
+            SpawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, 10) * direction);
+            SpawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, -10) * direction);
         }
         else if (attackLevel == AttackLevel.Four) {
             // Spawn multiple fireballs at angles
-            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, 15) * direction);
-            spawnAttack(stats: stats, direction: direction);
-            spawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, -15) * direction);
+            SpawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, 15) * direction);
+            SpawnAttack(stats: stats, direction: direction);
+            SpawnAttack(stats: stats, direction: Quaternion.Euler(0, 0, -15) * direction);
         } else {
-            spawnAttack(stats: stats, direction: direction);
+            SpawnAttack(stats: stats, direction: direction);
         }
     }
     
@@ -173,7 +180,7 @@ public class PlayerController : MonoBehaviour
         return (mouseWorldPos - transform.position).normalized;
     }
     
-    private void spawnAttack(AttackLevelStats stats, Vector3 direction) {
+    private void SpawnAttack(AttackLevelStats stats, Vector3 direction) {
         // Create an autoattack
         // Position the projectile at the player's position, but outside the player's sprite bounds
         Vector3 pos = transform.position + direction * playerBounds.x*2;
@@ -196,7 +203,7 @@ public class PlayerController : MonoBehaviour
 
     public bool CanMove()
     {
-        return !isMovementBlockedByAttack;
+        return !isMovementBlockedByAttack && !isInShock;
     }
 
     // Attack stats for the current weapon level
@@ -227,15 +234,50 @@ public class PlayerController : MonoBehaviour
        
     }
 
+    public void MakeInvulnerableForSeconds(float seconds)
+    {
+        invulnerable = true;
+        StartCoroutine(Routines.DoLater(seconds, () =>
+        {
+            invulnerable = false;
+        }));
+    }
+
+    public void ApplyKnockback(Vector3 knockback)
+    {
+        isInShock = true;
+        rigidBody.AddForce(knockback, ForceMode2D.Impulse);
+        StartCoroutine(Routines.DoLater(shockDuration, () =>
+        {
+            isInShock = false;
+            rigidBody.velocity = new Vector3(0, 0, 0);
+        }));
+    }
+
+    private void MonsterDamagesPlayer(GameObject monsterObj)
+    {
+        if(invulnerable != true)
+        {
+            IMonster monster = monsterObj.GetComponent<IMonster>();
+            SetHealth(health - 1);
+            monster.ApplyKnockback((monsterObj.transform.position - transform.position).normalized * 3);
+            monster.ApplyDamage(1f);
+            this.ApplyKnockback((transform.position- monsterObj.transform.position).normalized * 3);
+            MakeInvulnerableForSeconds(0.25f);
+            animator.SetTrigger("Hurt");
+        }
+    }
+
     private void OnCollideWithMonster(GameObject monster)
     {
         Skeleton skeleton = monster.GetComponent<Skeleton>();
 
         if (skeleton != null)
         {
-            SetHealth(health - 1);
+            MonsterDamagesPlayer(monster);
         }
     }
+
 
     private void OnCollidWithConsumable(GameObject consumable)
     {

@@ -62,7 +62,7 @@ public class Dice : MonoBehaviour
     {
         isRolling = true;
         this.targetPosition = targetPosition;
-        this.targetPosition.z = 0;
+        this.targetPosition.z = transform.position.z;
         this.callback = callback;
     }
 }
