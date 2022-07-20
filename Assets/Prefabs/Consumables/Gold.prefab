@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4526fb9143c8f064198fc470f3b51047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 5953b525c61e84408a15e242b3b00b03, type: 3}
 --- !u!114 &3154804654995343312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,21 +127,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
+  CollisionTag: Player
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1934058984
+      Data2: 1104700015
+      Data3: 180641680
+      Data4: 1861077062
+    Path: event:/Gold Pickup
   Event: 
-  PlayEvent: 0
+  PlayEvent: 5
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
