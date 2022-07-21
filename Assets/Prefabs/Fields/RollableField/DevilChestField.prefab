@@ -308,6 +308,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6148037302045851291}
     m_Modifications:
+    - target: {fileID: 1036955467728864230, guid: 928b6efc9f673044d9149c1edd7983b8, type: 3}
+      propertyPath: PlayEvent
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1552602111996896010, guid: 928b6efc9f673044d9149c1edd7983b8, type: 3}
       propertyPath: m_Name
       value: DevilChest
