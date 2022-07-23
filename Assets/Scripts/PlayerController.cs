@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float autoAttackMovementDelay;
     public Slider healthBarSlider;
+    [SerializeField] private TMPro.TextMeshProUGUI goldText;
     public GameObject autoAttackPrefab;
     public GameObject replayMenu;
     public bool invulnerable = false;
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour
     public void SetGold(float value)
     {
         this.gold = value;
+        goldText.SetText(gold.ToString());
     }
 
     public void CheckAndDoMovement()
