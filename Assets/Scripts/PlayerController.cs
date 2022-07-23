@@ -253,6 +253,13 @@ public class PlayerController : MonoBehaviour
         }));
     }
 
+    public void ApplyDamage()
+    {
+        SetHealth(health - 1);
+        MakeInvulnerableForSeconds(0.25f);
+        animator.SetTrigger("Hurt");
+    }
+
     private void MonsterDamagesPlayer(GameObject monsterObj)
     {
         if(invulnerable != true)

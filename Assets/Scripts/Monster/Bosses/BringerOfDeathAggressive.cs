@@ -59,7 +59,7 @@ public class BringerOfDeathAggressive : MonsterBehaviourState
 
     bool IsInAttackRange()
     {
-        if (Mathf.Abs(player.transform.position.y - bringerOfDeath.transform.position.y) <= 1.3)
+        if (Mathf.Abs(player.transform.position.y - bringerOfDeath.transform.position.y) <= 1)
         {
             if (Vector3.Distance(bringerOfDeath.transform.position, player.transform.position) <= bringerOfDeath.attackRange + 1)
             {

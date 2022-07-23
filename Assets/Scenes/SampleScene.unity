@@ -169,11 +169,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-<<<<<<< HEAD
-    m_SensorSize: {x: 2.8678071, y: 1}
-=======
-    m_SensorSize: {x: 1.7772021, y: 1}
->>>>>>> 139f48e053e5a351a38950acd2280487830f9ea8
+    m_SensorSize: {x: 2.5016668, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -285,15 +281,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4626120167318945966, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.84
+      value: 8.88
       objectReference: {fileID: 0}
     - target: {fileID: 4626120167318945966, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.57
+      value: 2.45
       objectReference: {fileID: 0}
     - target: {fileID: 4626120167318945966, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4626120167318945966, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
       propertyPath: m_LocalRotation.w
@@ -323,13 +319,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4934549911260439735, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1707087
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934549911260439735, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934549911260439735, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08535433
+      objectReference: {fileID: 0}
     - target: {fileID: 5872065123141241919, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.54
       objectReference: {fileID: 0}
     - target: {fileID: 8958340513838153365, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958340513838153365, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
       propertyPath: sightRange
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8958340513838153365, guid: 1bd8f9ff31e6acc40b7b90a2c93918ff, type: 3}
       propertyPath: attackRange
@@ -1852,7 +1864,7 @@ PrefabInstance:
       objectReference: {fileID: 8432132044876248065}
     - target: {fileID: 53992723636802212, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
       propertyPath: moveSpeed
-      value: 3.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 53992723636802212, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
       propertyPath: replayMenu

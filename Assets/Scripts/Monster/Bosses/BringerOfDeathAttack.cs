@@ -16,13 +16,12 @@ public class BringerOfDeathAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collide with something!");
         if (collision.gameObject.name == "Player")
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             Vector3 knockback = (player.transform.position - gameObject.transform.position).normalized * 6;
             player.ApplyKnockback(knockback);
-            Debug.Log("Collide with player!");
+            player.ApplyDamage();
         }
     }
 
