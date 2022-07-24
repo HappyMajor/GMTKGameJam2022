@@ -51,7 +51,7 @@ public class BringerOfDeathTeleportAway : MonsterBehaviourState
 
     bool IsPlayerCloseToAttackRange()
     {
-       if (Vector3.Distance(bringerOfDeath.transform.position, player.transform.position) <= bringerOfDeath.attackRange + 2)
+       if (Vector3.Distance(bringerOfDeath.transform.position, player.transform.position) <= bringerOfDeath.attackRange + 1.5)
        {
             return true;
        }
