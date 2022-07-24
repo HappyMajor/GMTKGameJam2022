@@ -9,6 +9,7 @@ public class BringerOfDeath : MonoBehaviour, IMonster
     public float attackRange;
     public float sightRange;
     public BringerOfDeathAttack bringerOfDeathAttack;
+    public GameObject thunderPrefab;
 
     private Animator animator;
     [SerializeField]
@@ -20,6 +21,7 @@ public class BringerOfDeath : MonoBehaviour, IMonster
     {
         animator = GetComponent<Animator>();
         SetBehaviour(Behaviour.IDLE);
+        this.moveToPosition = transform.position;
     }
 
     private void Update()
@@ -30,27 +32,27 @@ public class BringerOfDeath : MonoBehaviour, IMonster
 
     public void SetBehaviour(Behaviour behaviour)
     {
-        if(currentBehaviourState != null)
-        {
-            currentBehaviourState.OnEnd();
-        }
+        if(currentBehaviourState != null) currentBehaviourState.OnEnd();
+
+        this.currentBehaviour = behaviour;
 
         switch(behaviour)
         {
             case Behaviour.IDLE:
-                this.currentBehaviour = Behaviour.IDLE;
                 this.currentBehaviourState = new BringerOfDeathIdle(this);
-                this.currentBehaviourState.Start();
                 break;
-            case Behaviour.AGGRESSIVE:
-                this.currentBehaviour = Behaviour.AGGRESSIVE;
-                this.currentBehaviourState = new BringerOfDeathAggressive(this);
-                this.currentBehaviourState.Start();
+            case Behaviour.CHASE_ATTACK:
+                this.currentBehaviourState = new BringerOfDeathChaseAttack(this);
                 break;
-            case Behaviour.EXHAUSTED:
-
+            case Behaviour.MAGIC_ATTACK:
+                this.currentBehaviourState = new BringerOfDeathMagicAttack(this);
+                break;
+            case Behaviour.TELEPORT_AWAY:
+                this.currentBehaviourState = new BringerOfDeathTeleportAway(this);
                 break;
         }
+
+        this.currentBehaviourState.Start();
     }
 
     public void ApplyDamage(float dmg)
@@ -107,6 +109,6 @@ public class BringerOfDeath : MonoBehaviour, IMonster
 
     public enum Behaviour
     {
-        AGGRESSIVE, IDLE, EXHAUSTED
+        CHASE_ATTACK, IDLE, MAGIC_ATTACK, TELEPORT_AWAY
     }
 }

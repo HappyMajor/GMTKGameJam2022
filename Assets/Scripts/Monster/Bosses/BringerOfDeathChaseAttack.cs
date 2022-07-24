@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BringerOfDeathAggressive : MonsterBehaviourState
+public class BringerOfDeathChaseAttack : MonsterBehaviourState
 {
     private GameObject player;
     private BringerOfDeath bringerOfDeath;
@@ -11,7 +11,7 @@ public class BringerOfDeathAggressive : MonsterBehaviourState
 
     private Coroutine currentCoroutine;
 
-    public BringerOfDeathAggressive(BringerOfDeath bringerOfDeath)
+    public BringerOfDeathChaseAttack(BringerOfDeath bringerOfDeath)
     {
         this.bringerOfDeath = bringerOfDeath;
     }
@@ -28,7 +28,7 @@ public class BringerOfDeathAggressive : MonsterBehaviourState
     void DoBehaviourLoop()
     {
         //Try to move to the player every 0.3 seconds
-        currentCoroutine = bringerOfDeath.StartCoroutine(Routines.DoEverySecondsAndEndAfter(interval: 0.3f, end: Random.Range(1,5), 
+        currentCoroutine = bringerOfDeath.StartCoroutine(Routines.DoEverySecondsAndEndAfter(interval: 0.3f, end: Random.Range(1,4), 
             action: () =>
             {
                 if (!this.animator.GetCurrentAnimatorStateInfo(0).IsName("BringerOfDeath_Attack"))
@@ -47,10 +47,10 @@ public class BringerOfDeathAggressive : MonsterBehaviourState
             endAction: () =>
             {
                 //take a break and retry again
-                currentCoroutine = bringerOfDeath.StartCoroutine(Routines.DoLater(seconds: 3f, 
+                currentCoroutine = bringerOfDeath.StartCoroutine(Routines.DoLater(seconds: 2f, 
                     action: () =>
                     {
-                        DoBehaviourLoop();
+                        bringerOfDeath.SetBehaviour(BringerOfDeath.Behaviour.TELEPORT_AWAY);
                     }
                 ));
             }
@@ -59,7 +59,7 @@ public class BringerOfDeathAggressive : MonsterBehaviourState
 
     bool IsInAttackRange()
     {
-        if (Mathf.Abs(player.transform.position.y - bringerOfDeath.transform.position.y) <= 1)
+        if (Mathf.Abs(player.transform.position.y - bringerOfDeath.transform.position.y) <= 0.5)
         {
             if (Vector3.Distance(bringerOfDeath.transform.position, player.transform.position) <= bringerOfDeath.attackRange + 1)
             {

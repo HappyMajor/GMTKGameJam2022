@@ -120,9 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  attackRange: 0
-  sightRange: 0
+  attackRange: 2
+  sightRange: 4
   bringerOfDeathAttack: {fileID: 7942292654536432005}
+  thunderPrefab: {fileID: 1753858101204359625, guid: e326b704b7153e24d8e274acd37419ae, type: 3}
   currentBehaviour: 1
 --- !u!1 &7459781105333839309
 GameObject:

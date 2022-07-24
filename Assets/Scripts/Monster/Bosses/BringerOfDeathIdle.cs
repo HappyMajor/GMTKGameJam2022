@@ -37,7 +37,7 @@ public class BringerOfDeathIdle : MonsterBehaviourState
         }
 
         //Player is in sight so set to aggressive
-        bringerOfDeath.SetBehaviour(BringerOfDeath.Behaviour.AGGRESSIVE);
+        bringerOfDeath.SetBehaviour(BringerOfDeath.Behaviour.CHASE_ATTACK);
     }
 
     private bool HasReachedPosition()
