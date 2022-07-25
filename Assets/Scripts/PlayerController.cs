@@ -45,13 +45,15 @@ public class PlayerController : MonoBehaviour
         { AttackLevel.Four, new AttackLevelStats(speed: 8.0f, range: 6.0f, duration: 1.00f, knockback: 1.4f, damage: 1, cooldown: 0.8f) }
     };
     [SerializeField] private AttackLevel attackLevel = AttackLevel.One;
-    [SerializeField] private TMPro.TextMeshProUGUI goldText;
     [SerializeField] private AudioClip attackSound;
     [SerializeField] private float invulnerableAfterDamageTime = 0.25f;
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private float cameraShakeOnDamageIntensityPerHp = 0.5f;
     [SerializeField] private float cameraShakeOnDamageTime = 0.1f;
+    [SerializeField] private TMPro.TextMeshProUGUI goldText;
+    [SerializeField] private TMPro.TextMeshProUGUI attackLevelText;
     [SerializeField] private CanvasRenderer goldCountCanvasRenderer;
+    [SerializeField] private CanvasRenderer attackLevelCanvasRenderer;
     public float health = 3;
     public float maxHealth = 3;
     public float gold = 0;
@@ -421,6 +423,12 @@ public class PlayerController : MonoBehaviour
         var text = GameObject.Find("Attack Level Text").GetComponent<TMPro.TMP_Text>();
         string newString = string.Format("Lvl {0}", getAttackLevelNum(attackLevel));
         text.SetText(newString);
+
+        // Flash the level counter
+        attackLevelText.GetComponent<TextFlash>().Flash();
+
+        // Shake the level counter display
+        attackLevelCanvasRenderer.GetComponent<HudElementShake>().Shake();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
