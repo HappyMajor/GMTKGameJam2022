@@ -15,12 +15,10 @@ public class BringerOfDeath : MonoBehaviour, IMonster
     [SerializeField] private Behaviour currentBehaviour;
     private MonsterBehaviourState currentBehaviourState;
     private Vector3 moveToPosition;
-    private Rigidbody2D rigidBody;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        rigidBody = GetComponent<Rigidbody2D>();
         SetBehaviour(Behaviour.IDLE);
         this.moveToPosition = transform.position;
     }
@@ -72,7 +70,8 @@ public class BringerOfDeath : MonoBehaviour, IMonster
 
     void die() {
         // Play death sound
-        OneShotAudio.Play("event:/sfx/bringer of death/death", transform, rigidBody);
+        // TODO: apply rigid body to sound when its added
+        OneShotAudio.Play("event:/sfx/bringer of death/death", transform);
     }
 
     public void ApplyKnockback(Vector3 knockback)
