@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI goldText;
     [SerializeField] private AudioClip attackSound;
     [SerializeField] private float invulnerableAfterDamageTime = 0.25f;
+    [SerializeField] private CameraShake cameraShake;
+    [SerializeField] private float cameraShakeOnDamageIntensityPerHp = 0.5f;
+    [SerializeField] private float cameraShakeOnDamageTime = 0.1f;
     public float health = 3;
     public float maxHealth = 3;
     public float gold = 0;
@@ -318,6 +321,11 @@ public class PlayerController : MonoBehaviour
 
         // Hurt animation
         animator.SetTrigger("Hurt");
+
+        // Shake camera when hit
+        cameraShake.ShakeCamera(
+            intensity: damage * cameraShakeOnDamageIntensityPerHp,
+            time: cameraShakeOnDamageTime);
     }
 
     private void MonsterDamagesPlayer(GameObject monsterObj)
