@@ -821,6 +821,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!1 &648276925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5519038492348235830, guid: 9df7f770499324b06bfa24aeaaeb67b3, type: 3}
+  m_PrefabInstance: {fileID: 8432132044876248063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &680971447
 GameObject:
   m_ObjectHideFlags: 3
@@ -1603,6 +1608,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &896677303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 560188913532036362, guid: 9df7f770499324b06bfa24aeaaeb67b3, type: 3}
+  m_PrefabInstance: {fileID: 8432132044876248063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &977363665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1942,6 +1952,10 @@ PrefabInstance:
       propertyPath: autoAttackPrefab
       value: 
       objectReference: {fileID: 2136152522309262775, guid: bc0dfee84cd9a7d43bc57080effabb1a, type: 3}
+    - target: {fileID: 53992723636802212, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
+      propertyPath: goldCountCanvasRenderer
+      value: 
+      objectReference: {fileID: 8432132044876248069}
     - target: {fileID: 53992723636802212, guid: 61c2a15751659f14496d8d63b753e6eb, type: 3}
       propertyPath: cameraShakeOnDamageIntensityPerHp
       value: 5
@@ -3124,9 +3138,42 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1560749940458645172, guid: 9df7f770499324b06bfa24aeaaeb67b3, type: 3}
   m_PrefabInstance: {fileID: 8432132044876248063}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 896677303}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8432132044876248068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896677303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523d0281372bb4d05af3f4608ee6eaf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 0.8705883, g: 0.82745105, b: 0.3529412, a: 1}
+  duration: 0.1
+--- !u!222 &8432132044876248069 stripped
+CanvasRenderer:
+  m_CorrespondingSourceObject: {fileID: 6419580426245937926, guid: 9df7f770499324b06bfa24aeaaeb67b3, type: 3}
+  m_PrefabInstance: {fileID: 8432132044876248063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8432132044876248070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648276925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138bb16e6c33f4219960ce6f15507dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2
+  duration: 0.1
