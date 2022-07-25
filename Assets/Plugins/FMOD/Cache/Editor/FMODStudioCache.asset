@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8681380515569492454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/die cast
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/die cast
+  Guid:
+    Data1: 2098532058
+    Data2: 1228997722
+    Data3: -746666589
+    Data4: -686109706
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8262954058416321297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,12 +276,13 @@ MonoBehaviour:
   - {fileID: -7038121562345819410}
   - {fileID: -352728820716908704}
   - {fileID: -1662491300351479109}
+  - {fileID: -8681380515569492454}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5197370716820486000}
   StringsBanks:
   - {fileID: 105210831548971381}
-  cacheTime: 637943428081272583
+  cacheTime: 637943445384485548
   cacheVersion: 131591
 --- !u!114 &105210831548971381
 MonoBehaviour:
@@ -271,10 +299,10 @@ MonoBehaviour:
   Path: FModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637943428081272583
+  lastModified: 637943445384485548
   FileSizes:
   - Name: Desktop
-    Value: 1500
+    Value: 1546
   Exists: 1
 --- !u!114 &534546463373718842
 MonoBehaviour:
@@ -426,10 +454,10 @@ MonoBehaviour:
   Path: FModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637943428081251063
+  lastModified: 637943445384470803
   FileSizes:
   - Name: Desktop
-    Value: 534752
+    Value: 570368
   Exists: 1
 --- !u!114 &7327081326671507907
 MonoBehaviour:

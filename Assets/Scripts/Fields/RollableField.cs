@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.EventSystems;
+
 public class RollableField : MonoBehaviour, IPointerClickHandler
 {
     private FieldDatabase fieldDatabase;
@@ -11,26 +12,19 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
     private Tilemap highTilemap;
     private SpriteRenderer spriteRenderer;
     private GameObject player;
-
     public GameObject highRiskIndicator;
     public GameObject highRewardIndicator;
     public GameObject highRewardHighRiskIndicator;
     public GameObject pentagram;
-
     public GameObject healthPotionPrefab;
     public GameObject speedPotionPrefab;
     public GameObject powerupPrefab;
     public GameObject goldPrefab;
-
     public GameObject dicePrefab;
-
     private int diceRollResult = 0;
-
     private bool isRolled = false;
-
     public GameObject skeletonPrefab;
-
-    public FieldType CurrentFieldType {get; set; }
+    public FieldType CurrentFieldType { get; set; }
 
     private void Start()
     {
@@ -214,28 +208,45 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
             }
         }
         GetComponent<SpriteRenderer>().sprite = null;
+
+        // Mark that we've rolled for this field
         isRolled = true;
+
+        // Add enemies to the field
         SpawnEnemies();
+
+        // Deactivate the pentagram
         pentagram.SetActive(false);
+
+        // Start tracking collision triggers for the field
         GetComponent<Collider2D>().isTrigger = true;
     }
 
     public void ThrowDice()
     {
+        // Remember that we've thrown the dice
         isRolled = true;
+
+        // Spawn a nice die
         Dice dice = Instantiate(dicePrefab, player.transform.position, Quaternion.Euler(new Vector3(0,0,0))).GetComponent<Dice>();
+
+        // Throw die at the field
         dice.ThrowAtTarget(transform.position, (int result) =>
         {
+            // Roll the die
             Roll(result);
         });
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(!isRolled)
-        {
-            ThrowDice();
+        // Already rolled
+        if(isRolled) {
+            return;
         }
+
+        // The the dice at the field
+        ThrowDice();
     }
 
     public enum FieldType

@@ -45,8 +45,14 @@ public class Dice : MonoBehaviour
         int result = UnityEngine.Random.Range(1, 7);
         animator.speed = 0f;
         animator.enabled = false;
+
+        // Create FX behind the die
         GameObject skillFx = Instantiate(skillFxPrefab, transform);
         skillFx.transform.position = transform.position;
+
+        // Play die FX sound
+        OneShotAudio.Play("event:/sfx/die cast", skillFx.transform);
+
         spriteRenderer.sprite = eyesOneToSix[result - 1];
         //bring it to front
         transform.position = new Vector3(transform.position.x, transform.position.y, -6);
