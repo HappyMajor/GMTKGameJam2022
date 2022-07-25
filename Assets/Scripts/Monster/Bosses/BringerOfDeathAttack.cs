@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BringerOfDeathAttack : MonoBehaviour
 {
+    [SerializeField] int damage = 2;
+
     public void Activate()
     {
         GetComponent<BoxCollider2D>().enabled = true;
@@ -20,8 +22,7 @@ public class BringerOfDeathAttack : MonoBehaviour
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             Vector3 knockback = (player.transform.position - gameObject.transform.position).normalized * 6;
-            player.ApplyKnockback(knockback);
-            player.ApplyDamage();
+            player.ApplyDamage(damage, knockback);
         }
     }
 
