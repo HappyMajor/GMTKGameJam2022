@@ -11,8 +11,7 @@ public class MonsterField : Field
         {
             Vector3 randomPosition = Util.GetRandomPositionOfRectangle(transform.position, 10, 10);
             GameObject skeletonObj = Instantiate(skeletonPrefab, randomPosition, Quaternion.Euler(new Vector3(0, 0, 0)));
-            skeletonObj.GetComponent<SpriteRenderer>().color = Color.red;
-            skeletonObj.GetComponent<Skeleton>().moveSpeed = 1.5f;
+            Skeleton.ConfigureSuperSkeleton(skeleton: skeletonObj.GetComponent<Skeleton>());
         }
     }
 }

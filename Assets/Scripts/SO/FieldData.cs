@@ -9,5 +9,5 @@ public class FieldData : ScriptableObject
     public List<Tile> baseTiles;
     public List<Tile> middleTiles;
     public List<Tile> highTiles;
-    public string name;
+    public string fieldName;
 }

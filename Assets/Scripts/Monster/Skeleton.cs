@@ -4,95 +4,129 @@ using UnityEngine;
 
 public class Skeleton : MonoBehaviour, IMonster
 {
-    public float health;
-    public Vector3 movePosition;
-    public float moveSpeed = 1;
-    public float weight = 1;
-    public float shockDuration = 1;
+    [SerializeField] const float shockDuration = 1;
+    [SerializeField] const float timeAfterDeathUntilDestroy = 3;
+    [SerializeField] const float superSkeletonSpeedMultiplier = 1.5f;
+    [SerializeField] float moveSpeed = 1;
+    [SerializeField] float health;
+    Vector3 movePosition;
+    Rigidbody2D rigidBody;
+    GameObject player;
+    Animator animator;
+    bool isDead = false;
+    bool isInShock = false;
 
-    private bool isInShock = false;
-    private Rigidbody2D rigidBody;
-    private GameObject player;
-    private Animator animator;
-    private bool isDead = false;
+    public static void ConfigureSuperSkeleton(Skeleton skeleton) {
+        Configure(skeleton: skeleton, color: Color.red, isSuperSkeleton: true);
+    }
 
-    public void Start()
+    public static void Configure(Skeleton skeleton, Color color, bool isSuperSkeleton) {
+        // Set its color
+        skeleton.gameObject.GetComponent<SpriteRenderer>().color = color;
+
+        // Super skeleton
+        if (isSuperSkeleton) {
+            // Moves faster than normal skeletons
+            skeleton.moveSpeed *= superSkeletonSpeedMultiplier;
+        }
+    }
+
+    void Start()
     {
         player = GameObject.Find("Player");
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
-    public void FixedUpdate()
+    void FixedUpdate()
     {
         if (!isInShock && !isDead)
         {
             movePosition = player.transform.position;
             Vector3 motion = (movePosition - transform.position).normalized * moveSpeed * Time.deltaTime;
             rigidBody.MovePosition(transform.position + motion);
-            
 
-            if(motion.magnitude >= 0)
+            // Walk animation when moving
+            if (motion.magnitude >= 0)
             {
                 animator.SetBool("Walk",true);
             }
 
+            // Pick direction to face
             if (Util.IsALeftOfB(transform.position, player.transform.position))
             {
                 //is left of the player so turn right
                 transform.localScale = new Vector3(1, 1, 1);
-            } else 
+            } 
+            else
             {
                 //is right of the player so turn left
                 transform.localScale = new Vector3(-1, 1, 1);
             }
 
-        } else
-        {
+        } 
+        else {
+          // Idle animation
           animator.SetBool("Walk", false);
         }
-
     }
 
     public void Die()
     {
-        StartCoroutine(Routines.DoLater(3, () =>
+        // Death animation
+        animator.SetBool("Death", true);
+
+        // Destroy the game object after a delay
+        StartCoroutine(Routines.DoLater(timeAfterDeathUntilDestroy, () =>
         {
             Destroy(this.gameObject);
         }));
-        animator.SetBool("Death", true);
+
+        // Flag as dead
         isDead = true;
 
-        //Deactivate collision so it does not block other skeletons and wont damage the player anymore
+        // Deactivate collision so it does not block other skeletons and wont damage the player anymore
         GetComponent<CircleCollider2D>().enabled = false;
     }
 
     public void ApplyDamage(float dmg)
     {
-        if(!isDead)
+        // Already dead!
+        if (isDead) {
+            return;
+        }
+
+        // Take damage
+        this.health -= dmg;
+
+        // Die if out of health
+        if (this.health <= 0)
         {
-            this.health -= dmg;
-            if (this.health <= 0)
-            {
-                Die();
-            }
+            Die();
         }
     }
 
 
     public void ApplyKnockback(Vector3 knockback)
     {
-        if(!isDead)
-        {
-            isInShock = true;
-            animator.SetTrigger("Hurt");
-            rigidBody.AddForce(knockback, ForceMode2D.Impulse);
-            StartCoroutine(Routines.DoLater(shockDuration, () =>
-            {
-                isInShock = false;
-            }));
+        // Can't get knocked back while dead
+        if (isDead) {
+            return;
         }
+
+        // Flag as being in shock
+        isInShock = true;
+
+        // Change to hurt animation
+        animator.SetTrigger("Hurt");
+
+        // Apply physics knockback
+        rigidBody.AddForce(knockback, ForceMode2D.Impulse);
+
+        // Mark as no longer in shock after shock is over
+        StartCoroutine(Routines.DoLater(shockDuration, () =>
+        {
+            isInShock = false;
+        }));
     }
-
-
 }

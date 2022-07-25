@@ -107,16 +107,15 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
         int skeletonCount = UnityEngine.Random.Range(minCount, maxCount);
         for(int i = 0; i < skeletonCount; i++)
         {
-           if(superSkeletons)
-           {
+            if (superSkeletons)
+            {
                 Skeleton skeleton = Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0))).GetComponent<Skeleton>();
-                skeleton.moveSpeed = skeleton.moveSpeed * 1.5f;
-                skeleton.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                Skeleton.ConfigureSuperSkeleton(skeleton: skeleton);
             } 
             else
-           {
+            {
                 Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0)));
-           }
+            }
         }
        
     }
@@ -128,8 +127,7 @@ public class RollableField : MonoBehaviour, IPointerClickHandler
             if (superSkeletons)
             {
                 Skeleton skeleton = Instantiate(skeletonPrefab, GetRandomPositionInField(), Quaternion.Euler(new Vector3(0, 0, 0))).GetComponent<Skeleton>();
-                skeleton.moveSpeed = skeleton.moveSpeed * 1.5f;
-                skeleton.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                Skeleton.ConfigureSuperSkeleton(skeleton: skeleton);
             }
             else
             {
