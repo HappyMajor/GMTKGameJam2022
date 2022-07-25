@@ -89,13 +89,28 @@ public class PlayerController : MonoBehaviour
 
     private void SetHealth(float value)
     {
+        // Update health
         this.health = value;
+
+        // Update health bar
         healthBarSlider.value = value / maxHealth;
+
+        // Die if out of health
         if (value <= 0)
         {
-            replayMenu.SetActive(true);
-            this.gameObject.SetActive(false);
+            die();
         }
+    }
+
+    private void die() {
+        // Play death sound
+        OneShotAudio.Play("event:/sfx/player/death", transform, rigidBody);
+
+        // Show replay menu
+        replayMenu.SetActive(true);
+
+        // Deactivate the player
+        this.gameObject.SetActive(false);
     }
 
     public void SetGold(float value)

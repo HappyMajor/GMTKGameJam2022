@@ -34,11 +34,21 @@ public class ShadowMonster : MonoBehaviour, IMonster
 
     public void ApplyDamage(float dmg)
     {
+        // Keep track of damage
         this.health -= dmg;
+
+        // Die
         if(this.health <= 0)
         {
-            Destroy(this.gameObject);
+            die();
         }
+    }
+
+    void die() {
+        // TODO: Play death sound
+
+        // Clean up game object
+        Destroy(this.gameObject);
     }
 
     public void ApplyKnockback(Vector3 knockback)
@@ -50,6 +60,4 @@ public class ShadowMonster : MonoBehaviour, IMonster
             isInShock = false;
         }));
     }
-
-
 }

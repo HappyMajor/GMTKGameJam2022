@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{cc89af4f-280f-4b70-a07e-95decbbd28c3}">
 		<property name="name">
-			<value>Skeleton Die</value>
+			<value>death</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{8fe4c265-746e-44a7-bb00-5dec58b1d93f}</destination>
+			<destination>{c07c26bb-eeb5-4103-9d52-3d7932fca326}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{fc4b0300-197d-4137-bc76-3d1e61bb63d9}</destination>
@@ -80,6 +80,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{a0749563-0a39-43c6-a9fe-3e00e6a7d642}">
+		<property name="volume">
+			<value>7</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{be84444b-1e14-4c62-aef6-eeb74ab3ca3d}</destination>
 		</relationship>
@@ -122,6 +125,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{e2b707ec-dbd8-431e-8d51-07165c5af594}" />
 	<object class="SingleSound" id="{37467abc-2ed4-411d-a8e9-ff729dea9c47}">
+		<property name="name" />
 		<relationship name="audioFile">
 			<destination>{5e3f7452-44bb-444b-aea2-d2a71592f16b}</destination>
 		</relationship>

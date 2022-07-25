@@ -60,7 +60,12 @@ public class Dice : MonoBehaviour
 
     public void ThrowAtTarget(Vector3 targetPosition, Action<int> callback)
     {
+        // Mark as rolling the die
         isRolling = true;
+
+        // Play sound
+        OneShotAudio.Play("event:/sfx/die roll", transform);
+
         this.targetPosition = targetPosition;
         this.targetPosition.z = transform.position.z;
         this.callback = callback;

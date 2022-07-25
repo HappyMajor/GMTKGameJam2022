@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BringerOfDeath : MonoBehaviour, IMonster
 {
-
+    [SerializeField] int health = 10;
     public float moveSpeed;
     public float attackRange;
     public float sightRange;
@@ -12,8 +12,7 @@ public class BringerOfDeath : MonoBehaviour, IMonster
     public GameObject thunderPrefab;
 
     private Animator animator;
-    [SerializeField]
-    private Behaviour currentBehaviour;
+    [SerializeField] private Behaviour currentBehaviour;
     private MonsterBehaviourState currentBehaviourState;
     private Vector3 moveToPosition;
 
@@ -58,6 +57,21 @@ public class BringerOfDeath : MonoBehaviour, IMonster
     public void ApplyDamage(float dmg)
     {
         currentBehaviourState.ApplyDamage(dmg);
+
+        // Take damage
+        dmg -= 1;
+
+        // TODO: sorry Alec not sure how the behavior state code works so you'll have to move the appropriate place
+        // Die if out of health
+        if (health <= 0) {
+            die();
+        }
+    }
+
+    void die() {
+        // Play death sound
+        // TODO: apply rigid body to sound when its added
+        OneShotAudio.Play("event:/sfx/bringer of death/death", transform);
     }
 
     public void ApplyKnockback(Vector3 knockback)

@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8262954058416321297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/skeleton/death
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/skeleton/death
+  Guid:
+    Data1: -863391921
+    Data2: 1265641487
+    Data3: -560628064
+    Data4: -1020740149
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2364395345873084257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +72,60 @@ MonoBehaviour:
     Data2: 1201722258
     Data3: 1165908119
     Data4: -339199673
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2346431001281281084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/skeleton/knockback
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/skeleton/knockback
+  Guid:
+    Data1: -22971108
+    Data2: 1100494133
+    Data3: -966085992
+    Data4: 542185503
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2091816590006904418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/player/death
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/player/death
+  Guid:
+    Data1: -724744383
+    Data2: 1088562427
+    Data3: 242050720
+    Data4: -210462579
   Banks:
   - {fileID: 5197370716820486000}
   IsStream: 0
@@ -98,18 +179,22 @@ MonoBehaviour:
   - {fileID: 5197370716820486000}
   EditorEvents:
   - {fileID: 5386617087615722101}
-  - {fileID: 3773991638149595741}
   - {fileID: 3013186353235591062}
   - {fileID: 7622922680036490592}
   - {fileID: -8737858804635603668}
   - {fileID: -1719991237240444667}
   - {fileID: -2364395345873084257}
+  - {fileID: -8262954058416321297}
+  - {fileID: -2091816590006904418}
+  - {fileID: 8934512439767732331}
+  - {fileID: -2346431001281281084}
+  - {fileID: 534546463373718842}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5197370716820486000}
   StringsBanks:
   - {fileID: 105210831548971381}
-  cacheTime: 637939133917363363
+  cacheTime: 637943395760326562
   cacheVersion: 131591
 --- !u!114 &105210831548971381
 MonoBehaviour:
@@ -126,11 +211,38 @@ MonoBehaviour:
   Path: FModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637939133917363363
+  lastModified: 637943395760326562
   FileSizes:
   - Name: Desktop
-    Value: 1032
+    Value: 1238
   Exists: 1
+--- !u!114 &534546463373718842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/bringer of death/death
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/bringer of death/death
+  Guid:
+    Data1: 1111992255
+    Data2: 1084743480
+    Data3: 317431226
+    Data4: 607318202
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3013186353235591062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,33 +270,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3773991638149595741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Skeleton Die
-  m_EditorClassIdentifier: 
-  Path: event:/Skeleton Die
-  Guid:
-    Data1: -863391921
-    Data2: 1265641487
-    Data3: -560628064
-    Data4: -1020740149
-  Banks:
-  - {fileID: 5197370716820486000}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &5197370716820486000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,10 +285,10 @@ MonoBehaviour:
   Path: FModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637939133917360477
+  lastModified: 637943395760311914
   FileSizes:
   - Name: Desktop
-    Value: 385152
+    Value: 434400
   Exists: 1
 --- !u!114 &5386617087615722101
 MonoBehaviour:
@@ -259,3 +344,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 28901
+--- !u!114 &8934512439767732331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/die roll
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/die roll
+  Guid:
+    Data1: 899812962
+    Data2: 1297369220
+    Data3: 889602698
+    Data4: -1172004044
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
