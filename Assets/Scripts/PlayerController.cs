@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
         return weaponLevelStats[attackLevel];
     }
 
-    private AttackLevel getNextWeaponLevel() {
+    private AttackLevel getNextAttackLevel() {
         switch(attackLevel) {
             case AttackLevel.One:
                 return AttackLevel.Two;
@@ -237,6 +237,23 @@ public class PlayerController : MonoBehaviour
                 return AttackLevel.One;
         }
     }
+
+    private int getAttackLevelNum(AttackLevel attackLevel) {
+        switch(attackLevel) {
+            case AttackLevel.One:
+                return 1;
+            case AttackLevel.Two:
+                return 2;
+            case AttackLevel.Three:
+                return 3;
+            case AttackLevel.Four:
+                return 4;
+            default:
+                throw new System.Exception("Invalid attack level: " + attackLevel);
+        }
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Monster")
@@ -367,13 +384,22 @@ public class PlayerController : MonoBehaviour
         }
         else if (consumable.gameObject.GetComponent<Powerup>() != null)
         {
-            var powerup = consumable.gameObject.GetComponent<Powerup>();
-            consumable.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            consumable.gameObject.GetComponent<Collider2D>().enabled = false;
+            // Destroy the powerup
             Destroy(consumable.gameObject);
 
-            this.attackLevel = getNextWeaponLevel();
+            // Level up player
+            levelUp();
         }
+    }
+
+    void levelUp() {
+        // Set new attack level
+        attackLevel = getNextAttackLevel();
+
+        // Update HUD for new level
+        var text = GameObject.Find("Attack Level Text").GetComponent<TMPro.TMP_Text>();
+        string newString = string.Format("Lvl {0}", getAttackLevelNum(attackLevel));
+        text.SetText(newString);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
