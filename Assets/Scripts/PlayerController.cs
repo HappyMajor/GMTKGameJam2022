@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private float cameraShakeOnDamageIntensityPerHp = 0.5f;
     [SerializeField] private float cameraShakeOnDamageTime = 0.1f;
+    [SerializeField] private CanvasRenderer goldCountCanvasRenderer;
     public float health = 3;
     public float maxHealth = 3;
     public float gold = 0;
@@ -116,7 +117,19 @@ public class PlayerController : MonoBehaviour
 
     public void SetGold(float value)
     {
-        this.gold = value;
+        // Increased gold?
+        if (value > gold) {
+            // Bling flash the gold text
+            goldText.GetComponent<TextFlash>().Flash();
+
+            // Shake the gold display
+            goldCountCanvasRenderer.GetComponent<HudElementShake>().Shake();
+        }
+
+        // Store the updated gold
+        gold = value;
+
+        // Update HUD text for gold count
         goldText.SetText(gold.ToString());
     }
 
