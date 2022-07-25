@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7038121562345819410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/bringer of death/teleport
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/bringer of death/teleport
+  Guid:
+    Data1: -1519299414
+    Data2: 1199268344
+    Data3: -428790897
+    Data4: 63101458
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2658356319384688665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +162,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1662491300351479109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/bringer of death/magic
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/bringer of death/magic
+  Guid:
+    Data1: 494709435
+    Data2: 1093723308
+    Data3: -595109700
+    Data4: 786635850
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-352728820716908704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/bringer of death/lightning
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/bringer of death/lightning
+  Guid:
+    Data1: -314690508
+    Data2: 1268154336
+    Data3: -705692266
+    Data4: 611055094
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,12 +245,16 @@ MonoBehaviour:
   - {fileID: 3735778542735527818}
   - {fileID: -2658356319384688665}
   - {fileID: 9127974342828568512}
+  - {fileID: 4960130441476990365}
+  - {fileID: -7038121562345819410}
+  - {fileID: -352728820716908704}
+  - {fileID: -1662491300351479109}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5197370716820486000}
   StringsBanks:
   - {fileID: 105210831548971381}
-  cacheTime: 637943421106856855
+  cacheTime: 637943428081272583
   cacheVersion: 131591
 --- !u!114 &105210831548971381
 MonoBehaviour:
@@ -186,10 +271,10 @@ MonoBehaviour:
   Path: FModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637943421106856855
+  lastModified: 637943428081272583
   FileSizes:
   - Name: Desktop
-    Value: 1336
+    Value: 1500
   Exists: 1
 --- !u!114 &534546463373718842
 MonoBehaviour:
@@ -299,6 +384,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4960130441476990365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/bringer of death/scythe
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/bringer of death/scythe
+  Guid:
+    Data1: -1025237465
+    Data2: 1203380175
+    Data3: 1511923101
+    Data4: -1895757972
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5197370716820486000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,10 +426,10 @@ MonoBehaviour:
   Path: FModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637943421106844907
+  lastModified: 637943428081251063
   FileSizes:
   - Name: Desktop
-    Value: 459808
+    Value: 534752
   Exists: 1
 --- !u!114 &7327081326671507907
 MonoBehaviour:

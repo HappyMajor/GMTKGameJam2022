@@ -25,6 +25,9 @@ public class BringerOfDeathTeleportAway : MonsterBehaviourState
         //Start casting animation
         animator.SetTrigger("Shadow");
 
+        // Play teleport sound
+        OneShotAudio.Play("event:/sfx/bringer of death/teleport", bringerOfDeath.transform);
+
         //Wait for the animation to finish
         yield return new WaitForSeconds(0.9f);
 

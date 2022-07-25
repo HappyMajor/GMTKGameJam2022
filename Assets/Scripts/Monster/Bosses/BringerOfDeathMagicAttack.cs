@@ -26,6 +26,9 @@ public class BringerOfDeathMagicAttack : MonsterBehaviourState
             //Start casting animation
             animator.SetTrigger("Cast");
 
+            // Play magic attack sound
+            OneShotAudio.Play("event:/sfx/bringer of death/magic", bringerOfDeath.transform);
+
             //Wait for the animation to be in the middle
             yield return new WaitForSeconds(0.6f);
 
