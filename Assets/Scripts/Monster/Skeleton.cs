@@ -76,6 +76,9 @@ public class Skeleton : MonoBehaviour, IMonster
         // Death animation
         animator.SetBool("Death", true);
 
+        // Play death sound
+        OneShotAudio.Play("event:/sfx/skeleton/death", transform, rigidBody);
+
         // Destroy the game object after a delay
         StartCoroutine(Routines.DoLater(timeAfterDeathUntilDestroy, () =>
         {
@@ -119,6 +122,9 @@ public class Skeleton : MonoBehaviour, IMonster
 
         // Change to hurt animation
         animator.SetTrigger("Hurt");
+
+        // Play sound
+        OneShotAudio.Play("event:/sfx/skeleton/knockback", transform, rigidBody);
 
         // Apply physics knockback
         rigidBody.AddForce(knockback, ForceMode2D.Impulse);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1b250e5b-f7aa-4073-b066-86fdb86216e0}">
+		<property name="assetPath">
+			<value>knockback.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.0710204081632653</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5a9ed1b2-36b4-4783-90dd-43bf16318934}</destination>
+		</relationship>
+	</object>
+</objects>
