@@ -3,7 +3,7 @@ using UnityEngine;
 public class OneShotAudio
 {
 
-  public static void Play(string eventName, Transform transform, Rigidbody2D rigidBody = null)
+  public static void Play(string eventName, Transform transform = null, Rigidbody2D rigidBody = null)
   {
     // Create sound
     var sound = FMODUnity.RuntimeManager.CreateInstance(eventName);
@@ -13,9 +13,13 @@ public class OneShotAudio
     {
       FMODUnity.RuntimeManager.AttachInstanceToGameObject(sound, transform, rigidBody);
     }
-    else
+    else if (transform)
     {
       FMODUnity.RuntimeManager.AttachInstanceToGameObject(sound, transform);
+    }
+    else
+    {
+      FMODUnity.RuntimeManager.PlayOneShot(eventName);
     }
 
     // Play sound

@@ -45,21 +45,20 @@ public class PlayerController : MonoBehaviour
         { AttackLevel.Four, new AttackLevelStats(speed: 8.0f, range: 6.0f, duration: 1.00f, knockback: 1.4f, damage: 1, cooldown: 0.8f) }
     };
     [SerializeField] private AttackLevel attackLevel = AttackLevel.One;
-
+    [SerializeField] private TMPro.TextMeshProUGUI goldText;
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private float invulnerableAfterDamageTime = 0.25f;
     public float health = 3;
     public float maxHealth = 3;
     public float gold = 0;
-
     public float moveSpeed;
     public float autoAttackMovementDelay;
     public Slider healthBarSlider;
-    [SerializeField] private TMPro.TextMeshProUGUI goldText;
     public GameObject autoAttackPrefab;
     public GameObject replayMenu;
     public bool invulnerable = false;
     public bool isInShock = false;
     public float shockDuration = 0.15f;
-
     private bool isMovementBlockedByAttack = false;
     private Vector3 playerBounds;
     private Camera viewCamera;
@@ -67,7 +66,6 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
     private Animator animator;
     private Rigidbody2D rigidBody;
-    [SerializeField] private AudioClip attackSound;
 
     public void Start() {
         playerBounds = GetComponent<SpriteRenderer>().bounds.extents;
@@ -90,7 +88,7 @@ public class PlayerController : MonoBehaviour
     private void SetHealth(float value)
     {
         // Update health
-        this.health = value;
+        this.health = Mathf.Max(value, 0);
 
         // Update health bar
         healthBarSlider.value = value / maxHealth;
@@ -251,42 +249,75 @@ public class PlayerController : MonoBehaviour
     public void MakeInvulnerableForSeconds(float seconds)
     {
         invulnerable = true;
-        StartCoroutine(Routines.DoLater(seconds, () =>
-        {
-            invulnerable = false;
-        }));
+
+        // NOTE: If we try to start the coroutine after play death it throws an error:
+        // "Coroutine couldn't be started because the the game object 'Player' is inactive!"
+        // So checking if still alive before scheduling the coroutine.
+        if (health > 0) {
+            StartCoroutine(Routines.DoLater(seconds, () =>
+            {
+                invulnerable = false;
+            }));
+        }
     }
 
     public void ApplyKnockback(Vector3 knockback)
     {
         isInShock = true;
         rigidBody.AddForce(knockback, ForceMode2D.Impulse);
-        StartCoroutine(Routines.DoLater(shockDuration, () =>
-        {
-            isInShock = false;
-            rigidBody.velocity = new Vector3(0, 0, 0);
-        }));
+
+        // NOTE: If we try to start the coroutine after play death it throws an error:
+        // "Coroutine couldn't be started because the the game object 'Player' is inactive!"
+        // So checking if still alive before scheduling the coroutine.
+        if (health > 0) {
+            StartCoroutine(Routines.DoLater(shockDuration, () =>
+            {
+                isInShock = false;
+                rigidBody.velocity = new Vector3(0, 0, 0);
+            }));
+        }
     }
 
-    public void ApplyDamage()
+
+    public void ApplyDamage(int damage, Vector3 knockback) 
     {
-        SetHealth(health - 1);
-        MakeInvulnerableForSeconds(0.25f);
+        // Base behavior
+        ApplyDamage(damage);
+
+        // Knockback
+        ApplyKnockback(knockback);
+    }
+
+    public void ApplyDamage(int damage)
+    {
+        // Lose one HP
+        SetHealth(health - damage);
+
+        // Temporarily invulnerable after taking damage
+        MakeInvulnerableForSeconds(invulnerableAfterDamageTime);
+
+        // Play hurt sound
+        OneShotAudio.Play("event:/sfx/player/hurt", transform, rigidBody);
+
+        // Hurt animation
         animator.SetTrigger("Hurt");
     }
 
     private void MonsterDamagesPlayer(GameObject monsterObj)
     {
-        if(invulnerable != true)
-        {
-            IMonster monster = monsterObj.GetComponent<IMonster>();
-            SetHealth(health - 1);
-            monster.ApplyKnockback((monsterObj.transform.position - transform.position).normalized * 3);
-            monster.ApplyDamage(1f);
-            this.ApplyKnockback((transform.position- monsterObj.transform.position).normalized * 3);
-            MakeInvulnerableForSeconds(0.25f);
-            animator.SetTrigger("Hurt");
+        if (invulnerable) {
+            return;
         }
+
+        IMonster monster = monsterObj.GetComponent<IMonster>();
+        // Knock back the monster
+        monster.ApplyKnockback((monsterObj.transform.position - transform.position).normalized * 3);
+        // Damage the monster
+        monster.ApplyDamage(1f);
+
+        // Damage the player
+        var knockback = (transform.position- monsterObj.transform.position).normalized * 3;
+        ApplyDamage(1, knockback);
     }
 
     private void OnCollideWithMonster(GameObject monster)

@@ -189,12 +189,14 @@ MonoBehaviour:
   - {fileID: 8934512439767732331}
   - {fileID: -2346431001281281084}
   - {fileID: 534546463373718842}
+  - {fileID: 3148057248260524100}
+  - {fileID: 7327081326671507907}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5197370716820486000}
   StringsBanks:
   - {fileID: 105210831548971381}
-  cacheTime: 637943395760326562
+  cacheTime: 637943416657323724
   cacheVersion: 131591
 --- !u!114 &105210831548971381
 MonoBehaviour:
@@ -211,10 +213,10 @@ MonoBehaviour:
   Path: FModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637943395760326562
+  lastModified: 637943416657323724
   FileSizes:
   - Name: Desktop
-    Value: 1238
+    Value: 1324
   Exists: 1
 --- !u!114 &534546463373718842
 MonoBehaviour:
@@ -270,6 +272,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3148057248260524100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/game over
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/game over
+  Guid:
+    Data1: -128784866
+    Data2: 1308794890
+    Data3: 2137458305
+    Data4: 1563870133
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5197370716820486000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,10 +314,10 @@ MonoBehaviour:
   Path: FModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637943395760311914
+  lastModified: 637943416657308247
   FileSizes:
   - Name: Desktop
-    Value: 434400
+    Value: 460576
   Exists: 1
 --- !u!114 &5386617087615722101
 MonoBehaviour:
@@ -308,6 +337,33 @@ MonoBehaviour:
     Data2: 1211695528
     Data3: 1396000659
     Data4: -1966110776
+  Banks:
+  - {fileID: 5197370716820486000}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7327081326671507907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/player/hurt
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/player/hurt
+  Guid:
+    Data1: -77572783
+    Data2: 1081060570
+    Data3: -2008829054
+    Data4: -1063714554
   Banks:
   - {fileID: 5197370716820486000}
   IsStream: 0
