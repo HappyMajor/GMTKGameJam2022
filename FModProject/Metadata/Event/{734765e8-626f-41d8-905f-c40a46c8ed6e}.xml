@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{734765e8-626f-41d8-905f-c40a46c8ed6e}">
 		<property name="name">
-			<value>Gold Pickup</value>
+			<value>gold</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{8fe4c265-746e-44a7-bb00-5dec58b1d93f}</destination>
+			<destination>{9a54b91a-6df4-45ae-bdff-0a1c0032c767}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{9f17a60d-bf8f-4056-bed2-793a5c408710}</destination>

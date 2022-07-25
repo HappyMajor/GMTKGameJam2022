@@ -134,7 +134,7 @@ MonoBehaviour:
       Data2: 1104700015
       Data3: 180641680
       Data4: 1861077062
-    Path: event:/Gold Pickup
+    Path: event:/sfx/items/pickup/gold
   Event: 
   PlayEvent: 5
   StopEvent: 0

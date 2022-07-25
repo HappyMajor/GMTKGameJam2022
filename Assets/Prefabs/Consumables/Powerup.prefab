@@ -134,7 +134,7 @@ MonoBehaviour:
       Data2: 1283379031
       Data3: 2104638855
       Data4: -631256662
-    Path: event:/Potion Pickup
+    Path: event:/sfx/items/pickup/potion
   Event: 
   PlayEvent: 6
   StopEvent: 0
