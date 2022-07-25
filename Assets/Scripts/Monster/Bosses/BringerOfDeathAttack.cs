@@ -9,6 +9,9 @@ public class BringerOfDeathAttack : MonoBehaviour
     public void Activate()
     {
         GetComponent<BoxCollider2D>().enabled = true;
+
+        // Play attack sound
+        OneShotAudio.Play("event:/sfx/bringer of death/scythe", gameObject.transform);
     }
 
     public void DeactivateAfterTime(float seconds)
