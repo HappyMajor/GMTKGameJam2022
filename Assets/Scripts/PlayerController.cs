@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI attackLevelText;
     [SerializeField] private CanvasRenderer goldCountCanvasRenderer;
     [SerializeField] private CanvasRenderer attackLevelCanvasRenderer;
+    [SerializeField] private CanvasRenderer lifeBarCanvasRenderer;
     public float health = 3;
     public float maxHealth = 3;
     public float gold = 0;
@@ -98,6 +99,9 @@ public class PlayerController : MonoBehaviour
 
         // Update health bar
         healthBarSlider.value = value / maxHealth;
+
+        // Shake the life bar
+        lifeBarCanvasRenderer.GetComponent<HudElementShake>().Shake();
 
         // Die if out of health
         if (value <= 0)
